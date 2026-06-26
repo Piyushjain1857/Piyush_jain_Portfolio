@@ -107,6 +107,18 @@ export default function Dashboard() {
         // Fetch LeetCode data
         const fetchLeetcode = async () => {
             const BASE = 'https://alfa-leetcode-api.onrender.com';
+            
+            // Try to load cached data first for instant UI or as a fallback
+            const cachedData = localStorage.getItem('leetcodeCache');
+            if (cachedData) {
+                try {
+                    const parsed = JSON.parse(cachedData);
+                    setLeetcodeData(parsed.data);
+                } catch(e) {
+                    console.error('Failed to parse cached LeetCode data');
+                }
+            }
+
             try {
                 const [profileRes, solvedRes] = await Promise.all([
                     fetch(`${BASE}/${leetcodeUsername}`),
@@ -117,11 +129,19 @@ export default function Dashboard() {
 
                 const profile = await profileRes.json();
                 const solved = await solvedRes.json();
+                const newData = { profile, solved };
 
-                setLeetcodeData({ profile, solved });
-                setLoadingLeetcode(false);
+                setLeetcodeData(newData);
+                
+                // Save the fresh successful data to cache
+                localStorage.setItem('leetcodeCache', JSON.stringify({
+                    timestamp: Date.now(),
+                    data: newData
+                }));
             } catch (err) {
                 console.error('LeetCode fetch error:', err);
+                // If API fails, we just rely on the cached data (if it exists)
+            } finally {
                 setLoadingLeetcode(false);
             }
         };

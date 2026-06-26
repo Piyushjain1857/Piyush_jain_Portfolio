@@ -1,13 +1,13 @@
 /* Footer.css - Premium Modern Layout */
 
 :root {
-  --footer-bg: #0a0a0a;
-  --footer-surface: rgba(255, 255, 255, 0.03);
-  --footer-border: rgba(255, 255, 255, 0.08);
-  --footer-text-muted: #8a8f98;
-  --footer-text-light: #e2e8f0;
+  --footer-bg: var(--bg-main);
+  --footer-surface: var(--bg-glass);
+  --footer-border: var(--border-color);
+  --footer-text-muted: var(--text-secondary);
+  --footer-text-light: var(--text-primary);
 
-  --gradient-cta: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  --gradient-cta: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-3) 100%);
   --glow-twitter: #1DA1F2;
   --glow-instagram: #E1306C;
   --glow-github: #ffffff;
@@ -33,7 +33,7 @@
   transform: translateX(-50%);
   width: 60%;
   height: 200px;
-  background: radial-gradient(ellipse at top, rgba(168, 85, 247, 0.15), transparent 70%);
+  background: radial-gradient(ellipse at top, var(--accent-glow), transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -82,7 +82,7 @@
 }
 
 .footer-cta-link .cta-arrow {
-  color: #ec4899;
+  color: var(--accent-3);
   -webkit-text-fill-color: initial;
   transition: transform 0.3s ease;
 }
@@ -107,13 +107,13 @@
   align-items: center;
   gap: 10px;
   font-size: 1.1rem;
-  color: #fca5a5;
+  color: var(--accent-1);
   text-decoration: none;
   transition: all 0.2s ease;
 }
 
 .contact-link .contact-icon {
-  color: #ec4899;
+  color: var(--accent-3);
 }
 
 .contact-link:hover {
