@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { ReactLenis } from 'lenis/react';
 import LoadingScreen from './components/LoadingScreen';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -56,7 +57,7 @@ export default function App() {
     }, [loadingComplete]);
 
     return (
-        <>
+        <ReactLenis root>
             <LoadingScreen onComplete={() => setLoadingComplete(true)} />
             
             {loadingComplete && (
@@ -80,6 +81,6 @@ export default function App() {
                     <Footer />
                 </>
             )}
-        </>
+        </ReactLenis>
     );
 }

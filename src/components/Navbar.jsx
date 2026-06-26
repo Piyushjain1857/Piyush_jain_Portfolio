@@ -117,7 +117,7 @@ export default function Navbar({ theme, setTheme }) {
                             </button>
                         </div>
                     </div>
-                    <a href="/assets/resume.pdf" target="_blank" className="btn btn-outline btn-sm">Resume</a>
+                    {/* <a href="/assets/resume.pdf" target="_blank" className="btn btn-outline btn-sm">Resume</a> */}
                     <button
                         id="mobile-menu-btn"
                         className="mobile-menu-btn"

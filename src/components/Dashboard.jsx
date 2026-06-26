@@ -299,7 +299,7 @@ export default function Dashboard() {
                             >
                                 {lbl}
                             </text>
-                            {v > 0 && animateCharts && (
+                            {/* v > 0 && animateCharts && (
                                 <text
                                     x={x + barW / 2}
                                     y={y - 4}
@@ -310,7 +310,7 @@ export default function Dashboard() {
                                 >
                                     {v}
                                 </text>
-                            )}
+                            ) */}
                         </g>
                     );
                 })}

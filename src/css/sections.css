@@ -213,6 +213,12 @@
     margin-bottom: var(--space-2);
     letter-spacing: 0.5px;
     text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.form-group:focus-within label {
+    color: var(--accent-1);
+    transform: translateX(4px);
 }
 
 .form-group input,
@@ -225,7 +231,14 @@
     border-radius: var(--radius-md);
     font-family: var(--font-sans);
     font-size: 0.9375rem;
-    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+    background: var(--bg-glass-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .form-group textarea {
@@ -237,7 +250,9 @@
 .form-group textarea:focus {
     outline: none;
     border-color: var(--accent-1);
-    box-shadow: 0 0 0 3px var(--accent-glow);
+    box-shadow: 0 4px 15px var(--accent-glow);
+    transform: translateY(-2px);
+    background: var(--bg-secondary);
 }
 
 .form-group input::placeholder,
