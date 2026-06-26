@@ -724,3 +724,91 @@ ul {
         box-shadow: var(--shadow-lg);
     }
 }
+
+/* ─── Light Theme Design Polish ─── */
+:root[data-theme="light"] .project-card,
+:root[data-theme="light"] .skill-category,
+:root[data-theme="light"] .gh-card,
+:root[data-theme="light"] .lc-card,
+:root[data-theme="light"] .ghs-panel {
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.06);
+}
+
+:root[data-theme="light"] .project-card:hover,
+:root[data-theme="light"] .skill-category:hover,
+:root[data-theme="light"] .gh-card:hover,
+:root[data-theme="light"] .ghs-panel:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.12), 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+:root[data-theme="light"] .lc-card:hover {
+    border-color: rgba(255, 161, 22, 0.4);
+    box-shadow: 0 10px 30px rgba(255, 161, 22, 0.1), 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+:root[data-theme="light"] .project-tech span {
+    color: #1d4ed8;
+    background: rgba(59, 130, 246, 0.08);
+    border-color: rgba(59, 130, 246, 0.2);
+}
+
+:root[data-theme="light"] .lc-track {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+:root[data-theme="light"] .lc-diff.easy {
+    color: #0b8a7b;
+}
+
+:root[data-theme="light"] .lc-diff.medium {
+    color: #d97706;
+}
+
+:root[data-theme="light"] .lc-diff.hard {
+    color: #dc2626;
+}
+
+:root[data-theme="light"] .gh-cta-btn {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.08));
+    border-color: rgba(59, 130, 246, 0.3);
+    color: #1d4ed8;
+}
+
+:root[data-theme="light"] .gh-cta-btn:hover {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15));
+    border-color: rgba(59, 130, 246, 0.5);
+    color: #1e40af;
+}
+
+:root[data-theme="light"] .lc-cta-btn {
+    background: linear-gradient(135deg, rgba(255, 161, 22, 0.08), rgba(255, 107, 53, 0.08));
+    border-color: rgba(255, 107, 53, 0.3);
+    color: #c65100;
+}
+
+:root[data-theme="light"] .lc-cta-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 161, 22, 0.15), rgba(255, 107, 53, 0.15));
+    border-color: rgba(255, 107, 53, 0.5);
+    color: #a04100;
+}
+
+:root[data-theme="light"] .social-links a {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.1);
+    color: var(--text-primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+:root[data-theme="light"] .social-links a:hover {
+    color: #fff;
+    background: var(--accent-1);
+    border-color: var(--accent-1);
+    box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+:root[data-theme="light"] .chatbot-input-area {
+    background: rgba(0, 0, 0, 0.03);
+}

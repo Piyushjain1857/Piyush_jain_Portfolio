@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initChatbot();
     initMagneticButtons();
     initThemeSwitcher();
-    
+
     // Set current year in footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
 });
@@ -24,14 +24,14 @@ function initLoader() {
     const loader = document.getElementById('loading-screen');
     const progressBar = document.querySelector('.loader-progress-bar');
     const loaderText = document.querySelector('.loader-text');
-    
+
     let progress = 0;
     const interval = setInterval(() => {
         progress += Math.random() * 15;
         if (progress > 100) progress = 100;
-        
+
         progressBar.style.width = `${progress}%`;
-        
+
         if (progress === 100) {
             clearInterval(interval);
             loaderText.textContent = "Welcome.";
@@ -48,7 +48,7 @@ function initLoader() {
    ========================================= */
 function initCustomCursor() {
     const spotlight = document.querySelector('.mouse-spotlight');
-    
+
     document.addEventListener('mousemove', (e) => {
         spotlight.style.setProperty('--mouse-x', `${e.clientX}px`);
         spotlight.style.setProperty('--mouse-y', `${e.clientY}px`);
@@ -66,15 +66,15 @@ function initTypewriter() {
         "AI/ML Integrations.",
         "Premium User Interfaces."
     ];
-    
+
     let phraseIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
     let typingSpeed = 100;
-    
+
     function type() {
         const currentPhrase = phrases[phraseIndex];
-        
+
         if (isDeleting) {
             textElement.textContent = currentPhrase.substring(0, charIndex - 1);
             charIndex--;
@@ -84,7 +84,7 @@ function initTypewriter() {
             charIndex++;
             typingSpeed = 100;
         }
-        
+
         if (!isDeleting && charIndex === currentPhrase.length) {
             isDeleting = true;
             typingSpeed = 1500; // Pause at end
@@ -93,10 +93,10 @@ function initTypewriter() {
             phraseIndex = (phraseIndex + 1) % phrases.length;
             typingSpeed = 500; // Pause before typing next
         }
-        
+
         setTimeout(type, typingSpeed);
     }
-    
+
     setTimeout(type, 2000); // Start after loader
 }
 
@@ -106,19 +106,19 @@ function initTypewriter() {
 function initParticles() {
     const container = document.getElementById('particles');
     if (!container) return;
-    
+
     const particleCount = 50;
-    
+
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.classList.add('particle');
-        
+
         const size = Math.random() * 4 + 1;
         const posX = Math.random() * 100;
         const posY = Math.random() * 100;
         const duration = Math.random() * 20 + 10;
         const delay = Math.random() * 5;
-        
+
         particle.style.cssText = `
             position: absolute;
             width: ${size}px;
@@ -131,10 +131,10 @@ function initParticles() {
             animation-delay: ${delay}s;
             pointer-events: none;
         `;
-        
+
         container.appendChild(particle);
     }
-    
+
     const style = document.createElement('style');
     style.textContent = `
         @keyframes float-particle {
@@ -156,20 +156,20 @@ function initScrollEffects() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link');
     const backToTop = document.getElementById('back-to-top');
-    
+
     let lastScrollY = window.scrollY;
-    
+
     window.addEventListener('scroll', () => {
         // Scroll Progress
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (winScroll / height) * 100;
-        if(scrollProgress) scrollProgress.style.width = scrolled + '%';
-        
+        if (scrollProgress) scrollProgress.style.width = scrolled + '%';
+
         // Hide/Show Navbar on Scroll Direction
         // Navbar is now permanently fixed based on user request.
         navbar.classList.remove('hidden');
-        
+
         // Navbar Glass effect enhancement
         if (window.scrollY > 50) {
             navbar.style.background = 'var(--bg-glass-hover)';
@@ -178,7 +178,7 @@ function initScrollEffects() {
             navbar.style.background = 'var(--bg-glass)';
             navbar.style.boxShadow = 'none';
         }
-        
+
         // Back to top button
         if (window.scrollY > 500) {
             backToTop.style.opacity = '1';
@@ -187,9 +187,9 @@ function initScrollEffects() {
             backToTop.style.opacity = '0';
             backToTop.style.pointerEvents = 'none';
         }
-        
+
         lastScrollY = window.scrollY;
-        
+
         // Scroll Spy
         let current = '';
         sections.forEach(section => {
@@ -199,7 +199,7 @@ function initScrollEffects() {
                 current = section.getAttribute('id');
             }
         });
-        
+
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href').includes(current)) {
@@ -207,7 +207,7 @@ function initScrollEffects() {
             }
         });
     });
-    
+
     // Reveal animations
     const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -218,10 +218,10 @@ function initScrollEffects() {
             }
         });
     }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-    
+
     revealElements.forEach(el => revealObserver.observe(el));
-    
-    if(backToTop) {
+
+    if (backToTop) {
         backToTop.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
@@ -233,25 +233,25 @@ function initScrollEffects() {
    ========================================= */
 function initTiltEffect() {
     const cards = document.querySelectorAll('.tilt-card');
-    
+
     cards.forEach(card => {
         card.addEventListener('mousemove', e => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
+
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            
+
             const rotateX = ((y - centerY) / centerY) * -10;
             const rotateY = ((x - centerX) / centerX) * 10;
-            
+
             card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
             card.style.zIndex = '10';
             card.style.setProperty('--glare-x', `${(x / rect.width) * 100}%`);
             card.style.setProperty('--glare-y', `${(y / rect.height) * 100}%`);
         });
-        
+
         card.addEventListener('mouseleave', () => {
             card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
             card.style.zIndex = '1';
@@ -266,45 +266,45 @@ function initTerminal() {
     const input = document.getElementById('terminal-input');
     const output = document.getElementById('terminal-output');
     if (!input || !output) return;
-    
+
     const commands = {
         help: "Available commands: help, about, projects, resume, skills, contact, github, theme, clear, sudo hire piyush",
         about: "Piyush Jain is a Full-Stack Software Engineer building scalable backend systems and intelligent AI integrations.",
         projects: "Featured: Curio, Agro AI, StreamHub, Cyber Guardian. Type 'github' to see more.",
-        skills: "Languages: Python, JavaScript, Java, C++ | Frameworks: React, Node.js, FastAPI | Tools: Docker, AWS, Git",
+        skills: "Languages: Python, JavaScript  Frameworks: React, Node.js, FastAPI | Tools: Docker, AWS, Git",
         contact: "Email: Piyushjain1857@gmail.com | Phone: +91 8595850153",
         github: "Redirecting to GitHub... <script>setTimeout(()=>window.open('https://github.com/Piyushjain1857','_blank'),1000)</script>",
         "sudo hire piyush": "Access Granted. Initializing offer letter protocols... just kidding, please email me at Piyushjain1857@gmail.com!",
         theme: "Use the theme switcher in the navigation bar to toggle between Dark, Light, Cyberpunk, and Forest themes.",
     };
-    
-    input.addEventListener('keydown', function(e) {
+
+    input.addEventListener('keydown', function (e) {
         if (e.key === 'Enter') {
             const cmd = this.value.trim().toLowerCase();
             this.value = '';
-            
+
             const cmdLine = document.createElement('div');
             cmdLine.innerHTML = `<span class="prompt">piyush@macbook:~$</span> ${cmd}`;
             output.appendChild(cmdLine);
-            
+
             if (cmd === 'clear') {
                 output.innerHTML = '';
                 return;
             }
-            
+
             const responseLine = document.createElement('div');
             responseLine.className = 'terminal-response';
-            
+
             if (commands[cmd]) {
                 responseLine.innerHTML = commands[cmd];
             } else if (cmd !== '') {
                 responseLine.innerHTML = `bash: ${cmd}: command not found. Type 'help' for available commands.`;
             }
-            
+
             if (cmd !== '') {
                 output.appendChild(responseLine);
             }
-            
+
             output.scrollTop = output.scrollHeight;
         }
     });
@@ -316,12 +316,9 @@ function initTerminal() {
 
 // Language color palette
 const LANG_COLORS = {
-    JavaScript: '#f1e05a', TypeScript: '#3178c6', Python: '#3572A5',
-    HTML:       '#e34c26', CSS:        '#563d7c', Java:       '#b07219',
-    'C++':      '#f34b7d', C:          '#555555', Go:         '#00ADD8',
-    Rust:       '#dea584', Ruby:       '#701516', PHP:        '#4F5D95',
-    Swift:      '#F05138', Kotlin:     '#A97BFF', Shell:      '#89e051',
-    Vue:        '#41b883',  Dart:       '#00B4AB', R:          '#198CE7',
+    JavaScript: '#f1e05a', Python: '#3572A5',
+    HTML: '#e34c26', CSS: '#563d7c', Go: '#00ADD8',
+    Shell: '#89e051',
 };
 
 function getLangColor(lang) {
@@ -341,28 +338,28 @@ async function initGithubStats() {
 
         if (!userRes.ok || !reposRes.ok) throw new Error('GitHub API Error');
 
-        const user  = await userRes.json();
+        const user = await userRes.json();
         const repos = await reposRes.json();
 
         // ── Stats ────────────────────────────────
         const totalStars = repos.reduce((a, r) => a + r.stargazers_count, 0);
         const totalForks = repos.reduce((a, r) => a + r.forks_count, 0);
-        const ownRepos   = repos.filter(r => !r.fork);
+        const ownRepos = repos.filter(r => !r.fork);
 
         // ── Language distribution ─────────────────
         const langMap = {};
         repos.forEach(r => { if (r.language) langMap[r.language] = (langMap[r.language] || 0) + 1; });
         const langEntries = Object.entries(langMap).sort((a, b) => b[1] - a[1]).slice(0, 6);
-        const langTotal   = langEntries.reduce((s, [, c]) => s + c, 0);
+        const langTotal = langEntries.reduce((s, [, c]) => s + c, 0);
 
         // Build SVG donut for languages
         const DONUT_R = 38, DONUT_CX = 50, DONUT_CY = 50;
         const donutCirc = 2 * Math.PI * DONUT_R;
         let donutOffset = 0;
         const donutSlices = langEntries.map(([lang, count]) => {
-            const pct   = count / langTotal;
-            const dash  = (pct * donutCirc).toFixed(2);
-            const gap   = (donutCirc - dash).toFixed(2);
+            const pct = count / langTotal;
+            const dash = (pct * donutCirc).toFixed(2);
+            const gap = (donutCirc - dash).toFixed(2);
             const slice = `<circle cx="${DONUT_CX}" cy="${DONUT_CY}" r="${DONUT_R}"
                 fill="none" stroke="${getLangColor(lang)}" stroke-width="12"
                 stroke-dasharray="${dash} ${gap}"
@@ -377,7 +374,7 @@ async function initGithubStats() {
             <div class="gh-legend-item">
                 <span class="gh-legend-dot" style="background:${getLangColor(lang)}"></span>
                 <span class="gh-legend-name">${lang}</span>
-                <span class="gh-legend-pct">${((count/langTotal)*100).toFixed(0)}%</span>
+                <span class="gh-legend-pct">${((count / langTotal) * 100).toFixed(0)}%</span>
             </div>`).join('');
 
         // ── Monthly activity bar chart ─────────────
@@ -386,37 +383,37 @@ async function initGithubStats() {
         const monthBuckets = {};
         for (let i = 11; i >= 0; i--) {
             const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
-            const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
+            const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
             monthBuckets[key] = 0;
         }
         repos.forEach(r => {
-            const d   = new Date(r.pushed_at);
-            const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
+            const d = new Date(r.pushed_at);
+            const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
             if (key in monthBuckets) monthBuckets[key]++;
         });
-        const bucketValues  = Object.values(monthBuckets);
-        const bucketKeys    = Object.keys(monthBuckets);
-        const maxVal        = Math.max(...bucketValues, 1);
-        const monthLabels   = ['J','F','M','A','M','J','J','A','S','O','N','D'];
+        const bucketValues = Object.values(monthBuckets);
+        const bucketKeys = Object.keys(monthBuckets);
+        const maxVal = Math.max(...bucketValues, 1);
+        const monthLabels = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
 
-        const barSvgWidth  = 360;
+        const barSvgWidth = 360;
         const barSvgHeight = 80;
-        const barCount     = bucketValues.length;
-        const barW         = Math.floor(barSvgWidth / barCount) - 3;
-        const barMaxH      = 60;
+        const barCount = bucketValues.length;
+        const barW = Math.floor(barSvgWidth / barCount) - 3;
+        const barMaxH = 60;
 
         const barRects = bucketValues.map((v, i) => {
-            const h   = Math.max(3, Math.round((v / maxVal) * barMaxH));
-            const x   = i * (barW + 3) + 1;
-            const y   = barSvgHeight - h - 14;
-            const mo  = new Date(bucketKeys[i] + '-01').getMonth();
+            const h = Math.max(3, Math.round((v / maxVal) * barMaxH));
+            const x = i * (barW + 3) + 1;
+            const y = barSvgHeight - h - 14;
+            const mo = new Date(bucketKeys[i] + '-01').getMonth();
             const lbl = monthLabels[mo];
             const isRecent = i >= barCount - 3;
             const col = isRecent ? 'url(#ghBarGrad)' : 'rgba(79,70,229,0.45)';
             return `
                 <rect x="${x}" y="${y}" width="${barW}" height="${h}" rx="2" fill="${col}"
                     class="gh-bar" data-val="${v}" data-month="${bucketKeys[i]}"/>
-                <text x="${x + barW/2}" y="${barSvgHeight - 1}" text-anchor="middle"
+                <text x="${x + barW / 2}" y="${barSvgHeight - 1}" text-anchor="middle"
                     font-size="7" fill="var(--text-muted)">${lbl}</text>`;
         }).join('');
 
@@ -503,9 +500,9 @@ async function initGithubStats() {
    8b. GitHub Graphs Section
    ========================================= */
 async function initGithubGraphs() {
-    const activityEl  = document.getElementById('gh-activity-chart');
-    const langEl      = document.getElementById('gh-lang-chart');
-    const reposEl     = document.getElementById('gh-repos-list');
+    const activityEl = document.getElementById('gh-activity-chart');
+    const langEl = document.getElementById('gh-lang-chart');
+    const reposEl = document.getElementById('gh-repos-list');
     if (!activityEl && !langEl && !reposEl) return;
 
     const username = 'Piyushjain1857';
@@ -519,16 +516,16 @@ async function initGithubGraphs() {
         const langMap = {};
         repos.forEach(r => { if (r.language) langMap[r.language] = (langMap[r.language] || 0) + 1; });
         const langEntries = Object.entries(langMap).sort((a, b) => b[1] - a[1]).slice(0, 6);
-        const langTotal   = langEntries.reduce((s, [, c]) => s + c, 0);
+        const langTotal = langEntries.reduce((s, [, c]) => s + c, 0);
 
         const DONUT_R = 42, CX = 54, CY = 54;
         const donutCirc = 2 * Math.PI * DONUT_R;
         let donutOffset = 0;
         const donutSlices = langEntries.map(([lang, count]) => {
-            const pct  = count / langTotal;
+            const pct = count / langTotal;
             const dash = (pct * donutCirc).toFixed(2);
-            const gap  = (donutCirc - dash).toFixed(2);
-            const s    = `<circle cx="${CX}" cy="${CY}" r="${DONUT_R}"
+            const gap = (donutCirc - dash).toFixed(2);
+            const s = `<circle cx="${CX}" cy="${CY}" r="${DONUT_R}"
                 fill="none" stroke="${getLangColor(lang)}" stroke-width="14"
                 stroke-dasharray="${dash} ${gap}"
                 stroke-dashoffset="${(-donutOffset).toFixed(2)}"
@@ -543,10 +540,10 @@ async function initGithubGraphs() {
                 <span class="ghs-legend-dot" style="background:${getLangColor(lang)}"></span>
                 <span class="ghs-legend-name">${lang}</span>
                 <div class="ghs-legend-bar-wrap">
-                    <div class="ghs-legend-bar" style="width:0%" data-w="${((count/langTotal)*100).toFixed(1)}%"
+                    <div class="ghs-legend-bar" style="width:0%" data-w="${((count / langTotal) * 100).toFixed(1)}%"
                          style="background:${getLangColor(lang)}"></div>
                 </div>
-                <span class="ghs-legend-pct">${((count/langTotal)*100).toFixed(0)}%</span>
+                <span class="ghs-legend-pct">${((count / langTotal) * 100).toFixed(0)}%</span>
             </div>`).join('');
 
         if (langEl) {
@@ -579,45 +576,45 @@ async function initGithubGraphs() {
         const monthFullLabels = [];
         for (let i = 11; i >= 0; i--) {
             const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
-            const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
+            const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
             monthBuckets[key] = 0;
             monthFullLabels.push(d.toLocaleString('default', { month: 'short' }));
         }
         repos.forEach(r => {
-            const d   = new Date(r.pushed_at);
-            const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
+            const d = new Date(r.pushed_at);
+            const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
             if (key in monthBuckets) monthBuckets[key]++;
         });
         const bucketValues = Object.values(monthBuckets);
-        const bucketKeys   = Object.keys(monthBuckets);
-        const maxVal       = Math.max(...bucketValues, 1);
+        const bucketKeys = Object.keys(monthBuckets);
+        const maxVal = Math.max(...bucketValues, 1);
 
         const W = 800, H = 160;
         const padL = 8, padR = 8, padT = 10, padB = 28;
         const chartW = W - padL - padR;
         const chartH = H - padT - padB;
         const barCount = bucketValues.length;
-        const barW     = Math.floor(chartW / barCount) - 4;
+        const barW = Math.floor(chartW / barCount) - 4;
 
         const gridLines = [0.25, 0.5, 0.75, 1].map(f => {
             const y = padT + chartH * (1 - f);
             return `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}"
-                stroke="rgba(255,255,255,0.05)" stroke-width="1"/>`;  
+                stroke="rgba(255,255,255,0.05)" stroke-width="1"/>`;
         }).join('');
 
         const bars = bucketValues.map((v, i) => {
-            const barH    = Math.max(3, Math.round((v / maxVal) * chartH));
-            const x       = padL + i * (barW + 4);
-            const y       = padT + chartH - barH;
-            const isNew   = i >= barCount - 3;
-            const fill    = isNew ? 'url(#ghGraphGrad)' : 'rgba(79,70,229,0.4)';
-            const lbl     = monthFullLabels[i];
+            const barH = Math.max(3, Math.round((v / maxVal) * chartH));
+            const x = padL + i * (barW + 4);
+            const y = padT + chartH - barH;
+            const isNew = i >= barCount - 3;
+            const fill = isNew ? 'url(#ghGraphGrad)' : 'rgba(79,70,229,0.4)';
+            const lbl = monthFullLabels[i];
             return `
                 <rect x="${x}" y="${y}" width="${barW}" height="${barH}" rx="3"
                       fill="${fill}" class="ghs-bar"/>
-                <text x="${x + barW/2}" y="${H - 5}" text-anchor="middle"
+                <text x="${x + barW / 2}" y="${H - 5}" text-anchor="middle"
                       font-size="9" fill="rgba(255,255,255,0.35)">${lbl}</text>
-                ${v > 0 ? `<text x="${x + barW/2}" y="${y - 4}" text-anchor="middle"
+                ${v > 0 ? `<text x="${x + barW / 2}" y="${y - 4}" text-anchor="middle"
                       font-size="8" fill="rgba(255,255,255,0.5)">${v}</text>` : ''}`;
         }).join('');
 
@@ -675,12 +672,12 @@ async function initGithubGraphs() {
 
 function timeAgo(date) {
     const secs = Math.floor((Date.now() - date) / 1000);
-    if (secs < 60)        return 'just now';
-    if (secs < 3600)      return `${Math.floor(secs/60)}m ago`;
-    if (secs < 86400)     return `${Math.floor(secs/3600)}h ago`;
-    if (secs < 2592000)   return `${Math.floor(secs/86400)}d ago`;
-    if (secs < 31536000)  return `${Math.floor(secs/2592000)}mo ago`;
-    return `${Math.floor(secs/31536000)}y ago`;
+    if (secs < 60) return 'just now';
+    if (secs < 3600) return `${Math.floor(secs / 60)}m ago`;
+    if (secs < 86400) return `${Math.floor(secs / 3600)}h ago`;
+    if (secs < 2592000) return `${Math.floor(secs / 86400)}d ago`;
+    if (secs < 31536000) return `${Math.floor(secs / 2592000)}mo ago`;
+    return `${Math.floor(secs / 31536000)}y ago`;
 }
 
 /* =========================================
@@ -703,26 +700,26 @@ async function initLeetCodeStats() {
         if (!profileRes.ok || !solvedRes.ok) throw new Error('API error');
 
         const profile = await profileRes.json();
-        const solved  = await solvedRes.json();
+        const solved = await solvedRes.json();
 
-        const totalSolved  = solved.solvedProblem   || 0;
-        const easySolved   = solved.easySolved       || 0;
-        const medSolved    = solved.mediumSolved     || 0;
-        const hardSolved   = solved.hardSolved       || 0;
+        const totalSolved = solved.solvedProblem || 0;
+        const easySolved = solved.easySolved || 0;
+        const medSolved = solved.mediumSolved || 0;
+        const hardSolved = solved.hardSolved || 0;
 
         // Totals from acSubmissionNum
         const totals = { easy: 869, medium: 1826, hard: 824 }; // LeetCode approximate totals
         const easyPct = Math.min((easySolved / totals.easy) * 100, 100).toFixed(1);
-        const medPct  = Math.min((medSolved  / totals.medium) * 100, 100).toFixed(1);
+        const medPct = Math.min((medSolved / totals.medium) * 100, 100).toFixed(1);
         const hardPct = Math.min((hardSolved / totals.hard) * 100, 100).toFixed(1);
 
         // Donut ring SVG — circle with dasharray trick
-        const total      = totals.easy + totals.medium + totals.hard;
-        const pctSolved  = Math.min(totalSolved / total, 1);
-        const r          = 54;
-        const circ       = 2 * Math.PI * r;
-        const dash       = (pctSolved * circ).toFixed(2);
-        const gap        = (circ - dash).toFixed(2);
+        const total = totals.easy + totals.medium + totals.hard;
+        const pctSolved = Math.min(totalSolved / total, 1);
+        const r = 54;
+        const circ = 2 * Math.PI * r;
+        const dash = (pctSolved * circ).toFixed(2);
+        const gap = (circ - dash).toFixed(2);
 
         const rankStr = profile.ranking
             ? '#' + Number(profile.ranking).toLocaleString()
@@ -864,18 +861,18 @@ function initChatbot() {
     const input = document.getElementById('chatbot-input');
     const sendBtn = document.getElementById('chatbot-send');
     const messages = document.getElementById('chatbot-messages');
-    
+
     if (!toggle || !windowEl) return;
-    
+
     toggle.addEventListener('click', () => {
         windowEl.classList.toggle('active');
         if (windowEl.classList.contains('active')) input.focus();
     });
-    
+
     closeBtn.addEventListener('click', () => {
         windowEl.classList.remove('active');
     });
-    
+
     // Very simple local Knowledge Base logic
     const responses = {
         "who are you": "I am an AI assistant representing Piyush Jain. Piyush is a Full-Stack Software Engineer who loves building robust backend systems.",
@@ -885,7 +882,7 @@ function initChatbot() {
         "contact": "You can reach Piyush at Piyushjain1857@gmail.com or call +91 8595850153.",
         "experience": "He has extensive experience in Full-Stack development and AI/ML integrations, having participated in various hackathons and leadership roles."
     };
-    
+
     function addMessage(text, sender) {
         const msgDiv = document.createElement('div');
         msgDiv.className = `chat-bubble ${sender}`;
@@ -893,21 +890,21 @@ function initChatbot() {
         messages.appendChild(msgDiv);
         messages.scrollTop = messages.scrollHeight;
     }
-    
+
     function processInput() {
         const val = input.value.trim().toLowerCase();
         if (!val) return;
-        
+
         addMessage(input.value, 'user');
         input.value = '';
-        
+
         // Typing animation
         const typing = document.createElement('div');
         typing.className = 'chat-bubble bot typing';
         typing.innerHTML = '<span>.</span><span>.</span><span>.</span>';
         messages.appendChild(typing);
         messages.scrollTop = messages.scrollHeight;
-        
+
         setTimeout(() => {
             messages.removeChild(typing);
             let found = false;
@@ -923,7 +920,7 @@ function initChatbot() {
             }
         }, 1000);
     }
-    
+
     sendBtn.addEventListener('click', processInput);
     input.addEventListener('keydown', e => {
         if (e.key === 'Enter') processInput();
@@ -935,17 +932,17 @@ function initChatbot() {
    ========================================= */
 function initMagneticButtons() {
     const magneticBtns = document.querySelectorAll('.magnetic-btn');
-    
+
     magneticBtns.forEach(btn => {
-        btn.addEventListener('mousemove', function(e) {
+        btn.addEventListener('mousemove', function (e) {
             const position = btn.getBoundingClientRect();
             const x = e.pageX - position.left - position.width / 2;
             const y = e.pageY - position.top - position.height / 2;
-            
+
             btn.style.transform = `translate(${x * 0.3}px, ${y * 0.5}px)`;
         });
-        
-        btn.addEventListener('mouseleave', function(e) {
+
+        btn.addEventListener('mouseleave', function (e) {
             btn.style.transform = 'translate(0px, 0px)';
         });
     });
@@ -988,7 +985,7 @@ function initThemeSwitcher() {
     function setTheme(theme) {
         htmlEl.setAttribute('data-theme', theme);
         localStorage.setItem('portfolio-theme', theme);
-        
+
         // Update active class
         themeOptions.forEach(opt => {
             opt.classList.remove('active');
@@ -996,14 +993,14 @@ function initThemeSwitcher() {
                 opt.classList.add('active');
             }
         });
-        
+
         // Update icon on main button
         if (themeIcon) {
             let iconName = 'moon';
             if (theme === 'light') iconName = 'sun';
             else if (theme === 'cyberpunk') iconName = 'zap';
             else if (theme === 'forest') iconName = 'feather';
-            
+
             // Set the feather icon explicitly inside the button
             themeToggle.innerHTML = `<i data-feather="${iconName}" id="theme-icon"></i>`;
             if (window.feather) window.feather.replace();

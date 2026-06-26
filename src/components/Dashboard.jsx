@@ -3,11 +3,10 @@ import { Loader, GitHub, ExternalLink } from 'react-feather';
 
 const LANG_COLORS = {
     JavaScript: '#f1e05a', TypeScript: '#3178c6', Python: '#3572A5',
-    HTML:       '#e34c26', CSS:        '#563d7c', Java:       '#b07219',
-    'C++':      '#f34b7d', C:          '#555555', Go:         '#00ADD8',
-    Rust:       '#dea584', Ruby:       '#701516', PHP:        '#4F5D95',
-    Swift:      '#F05138', Kotlin:     '#A97BFF', Shell:      '#89e051',
-    Vue:        '#41b883', Dart:       '#00B4AB', R:          '#198CE7',
+    HTML: '#e34c26', CSS: '#563d7c', Go: '#00ADD8',
+    Rust: '#dea584', Ruby: '#701516', PHP: '#4F5D95',
+    Swift: '#F05138', Kotlin: '#A97BFF', Shell: '#89e051',
+    Vue: '#41b883', Dart: '#00B4AB', R: '#198CE7',
 };
 
 function getLangColor(lang) {
@@ -16,12 +15,12 @@ function getLangColor(lang) {
 
 function timeAgo(date) {
     const secs = Math.floor((Date.now() - new Date(date)) / 1000);
-    if (secs < 60)        return 'just now';
-    if (secs < 3600)      return `${Math.floor(secs/60)}m ago`;
-    if (secs < 86400)     return `${Math.floor(secs/3600)}h ago`;
-    if (secs < 2592000)   return `${Math.floor(secs/86400)}d ago`;
-    if (secs < 31536000)  return `${Math.floor(secs/2592000)}mo ago`;
-    return `${Math.floor(secs/31536000)}y ago`;
+    if (secs < 60) return 'just now';
+    if (secs < 3600) return `${Math.floor(secs / 60)}m ago`;
+    if (secs < 86400) return `${Math.floor(secs / 3600)}h ago`;
+    if (secs < 2592000) return `${Math.floor(secs / 86400)}d ago`;
+    if (secs < 31536000) return `${Math.floor(secs / 2592000)}mo ago`;
+    return `${Math.floor(secs / 31536000)}y ago`;
 }
 
 export default function Dashboard() {
@@ -64,12 +63,12 @@ export default function Dashboard() {
                 const now = new Date();
                 const monthBuckets = {};
                 const monthFullLabels = [];
-                const monthLabels = ['J','F','M','A','M','J','J','A','S','O','N','D'];
+                const monthLabels = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
                 const monthKeys = [];
 
                 for (let i = 11; i >= 0; i--) {
                     const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
-                    const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
+                    const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
                     monthBuckets[key] = 0;
                     monthFullLabels.push(d.toLocaleString('default', { month: 'short' }));
                     monthKeys.push(key);
@@ -77,7 +76,7 @@ export default function Dashboard() {
 
                 repos.forEach(r => {
                     const d = new Date(r.pushed_at);
-                    const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
+                    const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
                     if (key in monthBuckets) monthBuckets[key]++;
                 });
 
@@ -194,10 +193,10 @@ export default function Dashboard() {
                                 <span className="ghs-legend-dot" style={{ background: getLangColor(lang) }}></span>
                                 <span className="ghs-legend-name">{lang}</span>
                                 <div className="ghs-legend-bar-wrap">
-                                    <div 
-                                        className="ghs-legend-bar" 
-                                        style={{ 
-                                            width: animateCharts ? `${widthPct}%` : '0%', 
+                                    <div
+                                        className="ghs-legend-bar"
+                                        style={{
+                                            width: animateCharts ? `${widthPct}%` : '0%',
                                             background: getLangColor(lang),
                                             transition: 'width 1.2s cubic-bezier(0.25, 1, 0.5, 1)'
                                         }}
@@ -227,13 +226,13 @@ export default function Dashboard() {
         const gridLines = [0.25, 0.5, 0.75, 1].map((f, idx) => {
             const y = padT + chartH * (1 - f);
             return (
-                <line 
+                <line
                     key={idx}
-                    x1={padL} 
-                    y1={y} 
-                    x2={W - padR} 
+                    x1={padL}
+                    y1={y}
+                    x2={W - padR}
                     y2={y}
-                    stroke="rgba(255,255,255,0.05)" 
+                    stroke="rgba(255,255,255,0.05)"
                     strokeWidth="1"
                 />
             );
@@ -261,31 +260,31 @@ export default function Dashboard() {
 
                     return (
                         <g key={i}>
-                            <rect 
-                                x={x} 
-                                y={y} 
-                                width={barW} 
-                                height={barH} 
+                            <rect
+                                x={x}
+                                y={y}
+                                width={barW}
+                                height={barH}
                                 rx="3"
-                                fill={fill} 
+                                fill={fill}
                                 className="ghs-bar"
                                 style={{ transition: 'y 1.2s cubic-bezier(0.25, 1, 0.5, 1), height 1.2s cubic-bezier(0.25, 1, 0.5, 1)' }}
                             />
-                            <text 
-                                x={x + barW / 2} 
-                                y={H - 5} 
+                            <text
+                                x={x + barW / 2}
+                                y={H - 5}
                                 textAnchor="middle"
-                                fontSize="9" 
+                                fontSize="9"
                                 fill="rgba(255,255,255,0.35)"
                             >
                                 {lbl}
                             </text>
                             {v > 0 && animateCharts && (
-                                <text 
-                                    x={x + barW / 2} 
-                                    y={y - 4} 
+                                <text
+                                    x={x + barW / 2}
+                                    y={y - 4}
                                     textAnchor="middle"
-                                    fontSize="8" 
+                                    fontSize="8"
                                     fill="rgba(255,255,255,0.5)"
                                     style={{ animation: 'fadeIn 0.5s ease forwards' }}
                                 >
@@ -327,12 +326,12 @@ export default function Dashboard() {
                 <div className="lc-donut-wrap">
                     <svg className="lc-donut" viewBox="0 0 120 120">
                         <circle cx="60" cy="60" r={r} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="10" />
-                        <circle 
-                            cx="60" 
-                            cy="60" 
-                            r={r} 
+                        <circle
+                            cx="60"
+                            cy="60"
+                            r={r}
                             fill="none"
-                            stroke="url(#lcGrad)" 
+                            stroke="url(#lcGrad)"
                             strokeWidth="10"
                             strokeLinecap="round"
                             strokeDasharray={`${dash} ${gap}`}
@@ -361,11 +360,11 @@ export default function Dashboard() {
                             <span className="lc-bar-count">{easySolved}</span>
                         </div>
                         <div className="lc-track">
-                            <div 
-                                className="lc-fill easy" 
-                                style={{ 
+                            <div
+                                className="lc-fill easy"
+                                style={{
                                     width: animateCharts ? `${easyPct}%` : '0%',
-                                    transition: 'width 1.2s cubic-bezier(0.25, 1, 0.5, 1)' 
+                                    transition: 'width 1.2s cubic-bezier(0.25, 1, 0.5, 1)'
                                 }}
                             ></div>
                         </div>
@@ -376,11 +375,11 @@ export default function Dashboard() {
                             <span className="lc-bar-count">{medSolved}</span>
                         </div>
                         <div className="lc-track">
-                            <div 
-                                className="lc-fill medium" 
-                                style={{ 
+                            <div
+                                className="lc-fill medium"
+                                style={{
                                     width: animateCharts ? `${medPct}%` : '0%',
-                                    transition: 'width 1.2s cubic-bezier(0.25, 1, 0.5, 1)' 
+                                    transition: 'width 1.2s cubic-bezier(0.25, 1, 0.5, 1)'
                                 }}
                             ></div>
                         </div>
@@ -391,11 +390,11 @@ export default function Dashboard() {
                             <span className="lc-bar-count">{hardSolved}</span>
                         </div>
                         <div className="lc-track">
-                            <div 
-                                className="lc-fill hard" 
-                                style={{ 
+                            <div
+                                className="lc-fill hard"
+                                style={{
                                     width: animateCharts ? `${hardPct}%` : '0%',
-                                    transition: 'width 1.2s cubic-bezier(0.25, 1, 0.5, 1)' 
+                                    transition: 'width 1.2s cubic-bezier(0.25, 1, 0.5, 1)'
                                 }}
                             ></div>
                         </div>
@@ -412,7 +411,7 @@ export default function Dashboard() {
                 <div className="container">
                     <h2 className="section-title reveal"><span>04.</span> Dashboard</h2>
                     <div className="dashboard-grid reveal">
-                        
+
                         {/* Left Column: Stack GitHub Stats & Language Distribution */}
                         <div className="dashboard-left-col">
                             {/* GITHUB STATS CARD */}

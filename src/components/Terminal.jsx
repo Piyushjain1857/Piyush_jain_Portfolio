@@ -16,7 +16,7 @@ export default function Terminal() {
         help: "Available commands: help, about, projects, resume, skills, contact, github, theme, clear, sudo hire piyush",
         about: "Piyush Jain is a Full-Stack Software Engineer building scalable backend systems and intelligent AI integrations.",
         projects: "Featured: Curio, Agro AI, StreamHub, Cyber Guardian. Type 'github' to see more.",
-        skills: "Languages: Python, JavaScript, Java, C++ | Frameworks: React, Node.js, FastAPI | Tools: Docker, AWS, Git",
+        skills: "Languages: Python, JavaScript | Frameworks: React, Node.js, FastAPI | Tools: Docker, AWS, Git",
         contact: "Email: Piyushjain1857@gmail.com | Phone: +91 8595850153",
         github: "Redirecting to GitHub...",
         "sudo hire piyush": "Access Granted. Initializing offer letter protocols... just kidding, please email me at Piyushjain1857@gmail.com!",
