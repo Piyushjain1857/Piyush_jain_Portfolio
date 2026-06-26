@@ -12,7 +12,15 @@ export default function Contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert('Message feature simulated! Please use the email provided.');
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const message = e.target.message.value;
+        
+        window.location.href = `mailto:Piyushjain1857@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(
+            `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+        )}`;
+        
+        e.target.reset();
     };
 
     return (
@@ -69,15 +77,15 @@ export default function Contact() {
                     >
                         <div className="form-group">
                             <label htmlFor="name">Name</label>
-                            <input type="text" id="name" required placeholder="John Doe" />
+                            <input type="text" id="name" name="name" required placeholder="John Doe" />
                         </div>
                         <div className="form-group">
                             <label htmlFor="email">Email</label>
-                            <input type="email" id="email" required placeholder="john@example.com" />
+                            <input type="email" id="email" name="email" required placeholder="john@example.com" />
                         </div>
                         <div className="form-group">
                             <label htmlFor="message">Message</label>
-                            <textarea id="message" rows="5" required placeholder="Hello Piyush..."></textarea>
+                            <textarea id="message" name="message" rows="5" required placeholder="Hello Piyush..."></textarea>
                         </div>
                         <button 
                             ref={submitRef}

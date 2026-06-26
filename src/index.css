@@ -728,6 +728,10 @@ ul {
         gap: var(--space-3);
         box-shadow: var(--shadow-lg);
     }
+    
+    .scroll-indicator {
+        display: none;
+    }
 }
 
 /* ─── Light Theme Design Polish ─── */
