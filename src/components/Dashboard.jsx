@@ -487,7 +487,7 @@ export default function Dashboard() {
                             {/* LANGUAGE CHART PANEL */}
                             <div className="ghs-panel">
                                 <div className="ghs-panel-header">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                         <circle cx="12" cy="12" r="10" />
                                         <path d="M12 2a10 10 0 010 20" />
                                         <path d="M2 12h20" />

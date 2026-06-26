@@ -1,7 +1,25 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send } from 'react-feather';
-import useTilt from '../hooks/useTilt';
-import useMagnetic from '../hooks/useMagnetic';
+// Removed tilt/magnetic hooks based on user request
+import { GoogleGenerativeAI } from '@google/generative-ai';
+
+// Initialize Gemini
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+const genAI = apiKey ? new GoogleGenerativeAI(apiKey) : null;
+
+const SYSTEM_INSTRUCTION = `
+You are the AI assistant for Piyush Jain's personal portfolio website.
+Piyush Jain is a Full-Stack Software Engineer who loves building robust backend systems and intelligent AI integrations.
+His skills: HTML, CSS, JavaScript, React, Node.js, Python, FastAPI, Docker, and AWS.
+His projects: 
+- Curio: Premium AI platform integrating diverse models
+- Agro AI: Predictive analytics system for farmers using ML
+- Cyber Guardian: Automated threat detection analyzing network logs in real-time
+- StreamHub: Netflix-inspired video streaming platform
+Contact info: Email at Piyushjain1857@gmail.com or call +91 8595850153.
+Education: He is constantly learning and building, turning caffeine into code.
+Tone: Be friendly, concise, and helpful. Always try to promote Piyush's skills and direct them to hire him. DO NOT hallucinate info not provided here.
+`;
 
 export default function Chatbot() {
     const [isOpen, setIsOpen] = useState(false);
@@ -10,49 +28,68 @@ export default function Chatbot() {
     ]);
     const [inputValue, setInputValue] = useState('');
     const [isTyping, setIsTyping] = useState(false);
+    const [chatSession, setChatSession] = useState(null);
 
-    const toggleRef = useMagnetic();
-    const windowRef = useTilt();
     const chatEndRef = useRef(null);
     const inputRef = useRef(null);
 
-    const responses = {
-        "who are you": "I am an AI assistant representing Piyush Jain. Piyush is a Full-Stack Software Engineer who loves building robust backend systems.",
-        "projects": "Piyush has built several projects including Curio, Agro AI, StreamHub, Cyber Guardian, and AI Analytics Suite. You can view them in the Projects section.",
-        "skills": "Piyush excels in HTML, CSS, JavaScript, React, Node.js, Python, FastAPI, Docker, and AWS.",
-        "education": "He is constantly learning and building, turning caffeine into code.",
-        "contact": "You can reach Piyush at Piyushjain1857@gmail.com or call +91 8595850153.",
-        "experience": "He has extensive experience in Full-Stack development and AI/ML integrations, having participated in various hackathons and leadership roles."
-    };
+    // Initialize chat session on mount
+    useEffect(() => {
+        if (genAI) {
+            try {
+                const model = genAI.getGenerativeModel({
+                    model: "gemini-2.5-flash",
+                    systemInstruction: SYSTEM_INSTRUCTION,
+                });
+                const session = model.startChat({
+                    history: [],
+                });
+                setChatSession(session);
+            } catch (error) {
+                console.error("Failed to initialize Gemini:", error);
+            }
+        }
+    }, []);
 
     // Auto-scroll chat to bottom
     useEffect(() => {
         if (chatEndRef.current) {
-            chatEndRef.current.scrollTop = chatEndRef.current.scrollHeight;
+            setTimeout(() => {
+                if (chatEndRef.current) {
+                    chatEndRef.current.scrollTop = chatEndRef.current.scrollHeight;
+                }
+            }, 50);
         }
     }, [history, isTyping, isOpen]);
 
-    const handleSend = () => {
-        const val = inputValue.trim().toLowerCase();
+    const handleSend = async () => {
+        const val = inputValue.trim();
         if (!val) return;
 
         // User message
         const nextId = history.length + 1;
-        setHistory(prev => [...prev, { id: nextId, text: inputValue, sender: 'user' }]);
+        setHistory(prev => [...prev, { id: nextId, text: val, sender: 'user' }]);
         setInputValue('');
         setIsTyping(true);
 
-        setTimeout(() => {
-            setIsTyping(false);
-            let responseText = "I'm not sure about that. Try asking about his skills, projects, or contact info!";
-            for (let key in responses) {
-                if (val.includes(key)) {
-                    responseText = responses[key];
-                    break;
-                }
-            }
+        if (!genAI || !chatSession) {
+            setTimeout(() => {
+                setIsTyping(false);
+                setHistory(prev => [...prev, { id: prev.length + 1, text: "My AI brain is offline! Please configure the VITE_GEMINI_API_KEY in the .env file.", sender: 'bot' }]);
+            }, 1000);
+            return;
+        }
+
+        try {
+            const result = await chatSession.sendMessage(val);
+            const responseText = result.response.text();
             setHistory(prev => [...prev, { id: prev.length + 1, text: responseText, sender: 'bot' }]);
-        }, 1000);
+        } catch (error) {
+            console.error("Chatbot API Error:", error);
+            setHistory(prev => [...prev, { id: prev.length + 1, text: "Oops, I encountered an error. The API key might be invalid or rate limited.", sender: 'bot' }]);
+        } finally {
+            setIsTyping(false);
+        }
     };
 
     const handleKeyDown = (e) => {
@@ -71,16 +108,14 @@ export default function Chatbot() {
     return (
         <div className="chatbot-wrapper">
             <button 
-                ref={toggleRef}
-                className="chatbot-toggle magnetic-btn" 
+                className="chatbot-toggle" 
                 aria-label="Open AI Assistant"
                 onClick={handleToggle}
             >
                 <MessageCircle size={24} />
             </button>
             <div 
-                ref={windowRef} 
-                className={`chatbot-window tilt-card ${isOpen ? 'active' : ''}`}
+                className={`chatbot-window ${isOpen ? 'active' : ''}`}
             >
                 <div className="chatbot-header">
                     <div className="chatbot-title">
@@ -91,7 +126,7 @@ export default function Chatbot() {
                         <X size={16} />
                     </button>
                 </div>
-                <div id="chatbot-messages" className="chatbot-messages" ref={chatEndRef}>
+                <div id="chatbot-messages" className="chatbot-messages" ref={chatEndRef} data-lenis-prevent="true">
                     {history.map((msg) => (
                         <div key={msg.id} className={`chat-bubble ${msg.sender}`}>
                             {msg.text}
