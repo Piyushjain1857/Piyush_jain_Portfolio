@@ -23,22 +23,27 @@
 }
 
 :root[data-theme="light"] {
-    --bg-main: #f8fafc;
+    --bg-main: #f0f4f8;
     --bg-secondary: #ffffff;
-    --bg-glass: rgba(255, 255, 255, 0.7);
-    --bg-glass-hover: rgba(255, 255, 255, 0.9);
+    --bg-glass: rgba(255, 255, 255, 0.85);
+    --bg-glass-hover: rgba(255, 255, 255, 1);
     
-    --text-primary: #0f172a;
-    --text-secondary: #334155;
-    --text-muted: #64748b;
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
     
-    --accent-1: #3b82f6; /* Blue */
-    --accent-2: #8b5cf6; /* Violet */
-    --accent-3: #ec4899; /* Pink */
-    --accent-glow: rgba(59, 130, 246, 0.3);
+    --accent-1: #2563eb;
+    --accent-2: #7c3aed;
+    --accent-3: #db2777;
+    --accent-glow: rgba(37, 99, 235, 0.25);
     
-    --border-color: rgba(0, 0, 0, 0.08);
-    --border-highlight: rgba(0, 0, 0, 0.15);
+    --border-color: rgba(15, 23, 42, 0.1);
+    --border-highlight: rgba(15, 23, 42, 0.2);
+    
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
+    --shadow-glow: 0 0 30px var(--accent-glow);
 }
 
 :root[data-theme="cyberpunk"] {

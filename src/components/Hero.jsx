@@ -139,7 +139,7 @@ export default function Hero() {
                     <a href="https://github.com/Piyushjain1857" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                         <GitHub size={20} />
                     </a>
-                    <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <a href="https://linkedin.com/in/piyushjain1857" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <Linkedin size={20} />
                     </a>
                     <a href="https://leetcode.com/u/piyushjain1857/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode">

@@ -13,7 +13,9 @@ function SkillCard({ icon: Icon, title, tags }) {
             </h3>
             <div className="skill-tags">
                 {tags.map((tag, idx) => (
-                    <span key={idx}>{tag}</span>
+                    <a key={idx} href={tag.url} target="_blank" rel="noopener noreferrer">
+                        {tag.name}
+                    </a>
                 ))}
             </div>
         </div>
@@ -25,32 +27,59 @@ export default function Skills() {
         {
             icon: Code,
             title: "Languages",
-            tags: ["Python", "JavaScript (ES6+)", "SQL"]
+            tags: [
+                { name: "Python", url: "https://www.python.org/" },
+                { name: "JavaScript (ES6+)", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+                { name: "SQL", url: "https://en.wikipedia.org/wiki/SQL" }
+            ]
         },
         {
             icon: Server,
             title: "Backend",
-            tags: ["Node.js", "Express", "FastAPI"]
+            tags: [
+                { name: "Node.js", url: "https://nodejs.org/" },
+                { name: "Express", url: "https://expressjs.com/" },
+                { name: "FastAPI", url: "https://fastapi.tiangolo.com/" }
+            ]
         },
         {
             icon: Layout,
             title: "Frontend",
-            tags: ["HTML5", "CSS3", "React", "Redux"]
+            tags: [
+                { name: "HTML5", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+                { name: "CSS3", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+                { name: "React", url: "https://react.dev/" },
+                { name: "Redux", url: "https://redux.js.org/" }
+            ]
         },
         {
             icon: Database,
             title: "Databases",
-            tags: ["PostgreSQL", "MySQL"]
+            tags: [
+                { name: "PostgreSQL", url: "https://www.postgresql.org/" },
+                { name: "MySQL", url: "https://www.mysql.com/" }
+            ]
         },
         {
             icon: Cloud,
             title: "Tools & Cloud",
-            tags: ["AWS", "Git", "Linux", "CI/CD", "Power BI", "Canva", "Figma"]
+            tags: [
+                { name: "AWS", url: "https://aws.amazon.com/" },
+                { name: "Git", url: "https://git-scm.com/" },
+                { name: "Linux", url: "https://www.linux.org/" },
+                { name: "CI/CD", url: "https://en.wikipedia.org/wiki/CI/CD" },
+                { name: "Power BI", url: "https://powerbi.microsoft.com/" },
+                { name: "Canva", url: "https://www.canva.com/" },
+                { name: "Figma", url: "https://www.figma.com/" }
+            ]
         },
         {
             icon: Cpu,
             title: "AI / ML",
-            tags: ["Prompt engineering", "Gen AI"]
+            tags: [
+                { name: "Prompt engineering", url: "https://en.wikipedia.org/wiki/Prompt_engineering" },
+                { name: "Gen AI", url: "https://en.wikipedia.org/wiki/Generative_artificial_intelligence" }
+            ]
         }
     ];
 

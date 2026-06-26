@@ -20,7 +20,7 @@ export default function Terminal() {
         contact: "Email: Piyushjain1857@gmail.com | Phone: +91 8595850153",
         github: "Redirecting to GitHub...",
         "sudo hire piyush": "Access Granted. Initializing offer letter protocols... just kidding, please email me at Piyushjain1857@gmail.com!",
-        theme: "Use the theme switcher in the navigation bar to toggle between Dark, Light, Cyberpunk, and Forest themes.",
+        theme: "Use the theme switcher in the navigation bar to toggle between Dark, Cyberpunk, and Forest themes.",
     };
 
     // Auto-scroll to bottom

@@ -105,6 +105,7 @@ export default function Chatbot() {
                 </div>
                 <div className="chatbot-input-area">
                     <input 
+                        id="chatbot-input"
                         ref={inputRef}
                         type="text" 
                         value={inputValue}

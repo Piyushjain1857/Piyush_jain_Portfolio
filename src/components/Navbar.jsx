@@ -54,7 +54,6 @@ export default function Navbar({ theme, setTheme }) {
 
     const getThemeIcon = (themeName) => {
         switch (themeName) {
-            case 'light': return <Sun size={16} />;
             case 'cyberpunk': return <Zap size={16} />;
             case 'forest': return <FeatherIcon size={16} />;
             default: return <Moon size={16} />;
@@ -103,12 +102,7 @@ export default function Navbar({ theme, setTheme }) {
                             >
                                 <Moon size={14} /> Dark
                             </button>
-                            <button
-                                className={`theme-option ${theme === 'light' ? 'active' : ''}`}
-                                onClick={() => handleThemeChange('light')}
-                            >
-                                <Sun size={14} /> Light
-                            </button>
+
                             <button
                                 className={`theme-option ${theme === 'cyberpunk' ? 'active' : ''}`}
                                 onClick={() => handleThemeChange('cyberpunk')}

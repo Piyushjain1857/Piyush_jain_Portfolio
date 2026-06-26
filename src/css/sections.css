@@ -1,20 +1,20 @@
 /* Section Basics */
 .section {
-    padding: var(--space-12) 0;
+    padding: var(--space-8) 0;
     position: relative;
     z-index: 2;
 }
 
-.section + .section {
+.section+.section {
     border-top: 1px solid var(--border-color);
 }
 
 .section-title {
     font-size: clamp(1.75rem, 4vw, 2.75rem);
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-4);
     display: flex;
     align-items: baseline;
-    gap: var(--space-3);
+    gap: 12px;
     position: relative;
 }
 
@@ -72,8 +72,8 @@
 }
 
 .about-highlights {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--space-3);
     margin-top: var(--space-5);
 }
@@ -215,7 +215,8 @@
     text-transform: uppercase;
 }
 
-.form-group input, .form-group textarea {
+.form-group input,
+.form-group textarea {
     width: 100%;
     background: var(--bg-glass);
     border: 1px solid var(--border-color);
@@ -232,13 +233,15 @@
     min-height: 120px;
 }
 
-.form-group input:focus, .form-group textarea:focus {
+.form-group input:focus,
+.form-group textarea:focus {
     outline: none;
     border-color: var(--accent-1);
     box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
-.form-group input::placeholder, .form-group textarea::placeholder {
+.form-group input::placeholder,
+.form-group textarea::placeholder {
     color: var(--text-muted);
 }
 
@@ -247,7 +250,7 @@
     border-top: 1px solid var(--border-color);
     padding: var(--space-8) 0 var(--space-4);
     position: relative;
-    background: #000;
+    background: var(--bg-secondary);
 }
 
 .footer-content {
@@ -258,20 +261,7 @@
     gap: var(--space-6);
 }
 
-.footer-code-block pre {
-    background: var(--bg-secondary);
-    padding: var(--space-4);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border-color);
-    font-family: var(--font-mono);
-    font-size: 0.875rem;
-    text-align: left;
-    display: inline-block;
-}
 
-.keyword { color: #c678dd; }
-.variable { color: #e06c75; }
-.function { color: #61afef; }
 
 .footer-links {
     display: flex;
@@ -319,7 +309,9 @@
 
 /* Responsive Overrides */
 @media (max-width: 768px) {
-    .about-grid, .contact-grid {
+
+    .about-grid,
+    .contact-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -377,7 +369,10 @@
     cursor: pointer;
     transition: opacity 0.2s;
 }
-.ghs-bar:hover { opacity: 0.7; }
+
+.ghs-bar:hover {
+    opacity: 0.7;
+}
 
 /* Two-column layout */
 .ghs-two-col {
@@ -459,7 +454,7 @@
 
 .ghs-legend-bar-wrap {
     height: 5px;
-    background: rgba(255,255,255,0.07);
+    background: rgba(255, 255, 255, 0.07);
     border-radius: var(--radius-full);
     overflow: hidden;
 }
@@ -486,7 +481,7 @@
 }
 
 .ghs-repo-card {
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.02);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
     padding: var(--space-3) var(--space-4);
@@ -501,7 +496,7 @@
     border-color: rgba(79, 70, 229, 0.4);
     background: rgba(79, 70, 229, 0.05);
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .ghs-repo-top {
@@ -524,7 +519,7 @@
 
 .ghs-fork-badge {
     font-size: 0.6rem;
-    background: rgba(255,255,255,0.07);
+    background: rgba(255, 255, 255, 0.07);
     border: 1px solid var(--border-color);
     padding: 1px 6px;
     border-radius: var(--radius-full);
@@ -564,13 +559,25 @@
     gap: 3px;
 }
 
-.ghs-repo-star svg { color: #e3b341; }
+.ghs-repo-star svg {
+    color: #e3b341;
+}
 
-.ghs-repo-time { margin-left: auto; }
+.ghs-repo-time {
+    margin-left: auto;
+}
 
 /* Responsive */
 @media (max-width: 900px) {
-    .ghs-two-col        { grid-template-columns: 1fr; }
-    .ghs-repos-grid     { grid-template-columns: 1fr; }
-    .ghs-lang-wrap      { flex-direction: column; }
+    .ghs-two-col {
+        grid-template-columns: 1fr;
+    }
+
+    .ghs-repos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ghs-lang-wrap {
+        flex-direction: column;
+    }
 }

@@ -1,11 +1,12 @@
 import React from 'react';
-import { Mail, Phone, Send } from 'react-feather';
+import { Mail, Phone, Send, Linkedin } from 'react-feather';
 import useTilt from '../hooks/useTilt';
 import useMagnetic from '../hooks/useMagnetic';
 
 export default function Contact() {
     const emailTiltRef = useTilt();
     const phoneTiltRef = useTilt();
+    const linkedinTiltRef = useTilt();
     const formTiltRef = useTilt();
     const submitRef = useMagnetic();
 
@@ -44,6 +45,19 @@ export default function Contact() {
                                 <div>
                                     <h4>Phone</h4>
                                     <span>+91 8595850153</span>
+                                </div>
+                            </a>
+                            <a 
+                                href="https://linkedin.com/in/piyushjain1857" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                ref={linkedinTiltRef}
+                                className="contact-method tilt-card"
+                            >
+                                <Linkedin size={20} />
+                                <div>
+                                    <h4>LinkedIn</h4>
+                                    <span>Piyush Jain</span>
                                 </div>
                             </a>
                         </div>
