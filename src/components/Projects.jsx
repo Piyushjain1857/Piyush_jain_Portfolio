@@ -159,7 +159,7 @@ export default function Projects() {
             ],
             img: "/assets/health_center.png",
             github: "https://github.com/piyushjain1857/web_development_project-1",
-            demo: "https://piyushjain1857.github.io/web_development_project-1/"
+            demo: "https://piyushjain1857.github.io/Health-Center/"
         },
         {
             category: "HTML / CSS / JS",
