@@ -697,7 +697,7 @@ ul {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .nav-links, .nav-actions .btn {
         display: none;
     }
@@ -729,7 +729,8 @@ ul {
         box-shadow: var(--shadow-lg);
     }
     
-    .scroll-indicator {
+    .scroll-indicator,
+    .hero-social {
         display: none;
     }
 }

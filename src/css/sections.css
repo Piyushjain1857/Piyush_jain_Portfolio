@@ -323,7 +323,7 @@
 }
 
 /* Responsive Overrides */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
     .about-grid,
     .contact-grid {
@@ -583,7 +583,7 @@
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
     .ghs-two-col {
         grid-template-columns: 1fr;
     }
