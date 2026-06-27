@@ -10,28 +10,56 @@ const genAI = apiKey ? new GoogleGenerativeAI(apiKey) : null;
 const SYSTEM_INSTRUCTION = `
 You are the AI assistant for Piyush Jain's personal portfolio website.
 Piyush Jain is a Full-Stack Software Engineer who loves building robust backend systems and intelligent AI integrations.
-His skills: HTML, CSS, JavaScript, React, Node.js, Python, FastAPI, Docker, and AWS.
+His skills: HTML, CSS, JavaScript, TypeScript, React, Node.js, Python, FastAPI, Docker, PostgreSQL, AWS, ELK Stack, and TensorFlow.
+He confidently uses both JavaScript and TypeScript in his projects.
+
 His projects: 
-- Curio: Premium AI platform integrating diverse models
-- Agro AI: Predictive analytics system for farmers using ML
-- Cyber Guardian: Automated threat detection analyzing network logs in real-time
-- StreamHub: Netflix-inspired video streaming platform
+1. Curio: Premium AI platform integrating diverse AI models (React, Node.js, OpenAI API)
+2. Agro AI: Predictive analytics system for farmers using ML (Python, TensorFlow, FastAPI)
+3. Cyber Guardian: Automated threat detection analyzing network logs in real-time (Python, ELK Stack, Docker)
+4. Hostel Leave Management: Full-stack system for students and wardens (React, Node.js, PostgreSQL)
+5. StreamHub: Netflix-inspired video streaming platform (React, Vite, TMDB API)
+6. MediCare+: Healthcare appointment booking platform (React, Node.js)
+7. Maison Dorée: Luxury restaurant web experience (React, Vite, CSS3)
+8. Jarvis AI Assistant: Voice-activated AI assistant for macOS
+9. Auto-Job Apply Bot: Selenium-based automation tool for job applications
+10. HTML/CSS/JS Projects & Games: The Bodyline GYM, Health Center, Inner Peace, Restaurant Website, Limbo Reflex Game, Tic Tac Toe, Rock Paper Scissors, Mines.
+
 Contact info: Email at Piyushjain1857@gmail.com or call +91 8595850153.
 Education: He is constantly learning and building, turning caffeine into code.
-Tone: Be friendly, concise, and helpful. Always try to promote Piyush's skills and direct them to hire him. DO NOT hallucinate info not provided here.
+
+Tone: Be confident, concise, and strictly to the point when answering questions about Piyush. Do not use extra conversational filler. 
+NEVER express doubt about his skills. If asked about TypeScript, confidently state that he uses it along with JavaScript.
+IMPORTANT: If the user asks basic questions like "hi", "hello", "how are you", "kaise ho", or other small talk, YOU MUST reply politely. You can say you are doing well, introduce yourself as Piyush's AI assistant, and ask how you can help them learn more about Piyush.
+DO NOT hallucinate info about Piyush's skills or projects that is not provided here.
 `;
 
 export default function Chatbot() {
     const [isOpen, setIsOpen] = useState(false);
-    const [history, setHistory] = useState([
-        { id: 1, text: "Hi! I'm Piyush's AI assistant. Ask me about his skills, projects, or experience!", sender: 'bot' }
-    ]);
+    const [history, setHistory] = useState(() => {
+        const saved = localStorage.getItem('chatbot_history');
+        if (saved) {
+            try {
+                return JSON.parse(saved);
+            } catch (e) {
+                console.error("Error parsing chatbot history:", e);
+            }
+        }
+        return [
+            { id: 1, text: "Hi! I'm Piyush's AI assistant. Ask me about his skills, projects, or experience!", sender: 'bot' }
+        ];
+    });
     const [inputValue, setInputValue] = useState('');
     const [isTyping, setIsTyping] = useState(false);
     const [chatSession, setChatSession] = useState(null);
 
     const chatEndRef = useRef(null);
     const inputRef = useRef(null);
+
+    // Save history to localStorage
+    useEffect(() => {
+        localStorage.setItem('chatbot_history', JSON.stringify(history));
+    }, [history]);
 
     // Initialize chat session on mount
     useEffect(() => {
@@ -41,8 +69,17 @@ export default function Chatbot() {
                     model: "gemini-2.5-flash",
                     systemInstruction: SYSTEM_INSTRUCTION,
                 });
+                
+                // Hydrate Gemini session with past history
+                const geminiHistory = history
+                    .filter(msg => msg.id !== 1 && !msg.text.includes('API key might be invalid') && !msg.text.includes('My AI brain is offline'))
+                    .map(msg => ({
+                        role: msg.sender === 'user' ? 'user' : 'model',
+                        parts: [{ text: msg.text }]
+                    }));
+
                 const session = model.startChat({
-                    history: [],
+                    history: geminiHistory,
                 });
                 setChatSession(session);
             } catch (error) {
