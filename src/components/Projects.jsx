@@ -132,8 +132,8 @@ export default function Projects() {
                 { name: "CSS3", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" }
             ],
             img: "/assets/maison_doree_app.png",
-            github: "https://github.com/Piyushjain1857",
-            demo: "https://first-react-app-kappa-ten.vercel.app"
+            github: "https://github.com/Piyushjain1857/Maison-Doree.git",
+            demo: "https://maison-doree-jewellery.vercel.app"
         },
         {
             category: "HTML / CSS / JS",
