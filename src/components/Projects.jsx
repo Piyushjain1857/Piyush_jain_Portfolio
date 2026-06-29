@@ -55,7 +55,7 @@ export default function Projects() {
                 { name: "OpenAI API", url: "https://platform.openai.com/" }
             ],
             img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
-            github: "https://github.com/Piyushjain1857",
+            github: "https://github.com/Piyushjain1857/Cloud-Based-Online-Quiz-System.git",
             demo: "#"
         },
         {
@@ -68,7 +68,8 @@ export default function Projects() {
                 { name: "FastAPI", url: "https://fastapi.tiangolo.com/" }
             ],
             img: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=600&q=80",
-            github: "https://github.com/Piyushjain1857",
+            github: "https://github.com/Piyushjain1857/AgroAi-frontend.git",
+            github_Backend: "https://github.com/Piyushjain1857/AgroAi-backend.git",
             demo: "#"
         },
         {
