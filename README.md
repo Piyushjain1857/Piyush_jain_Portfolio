@@ -1,195 +1,118 @@
-# 🚀 Personal Portfolio Website
+# 🚀 Premium Developer Portfolio
 
-A modern, responsive, and interactive developer portfolio built using **React** and **Vite**. This portfolio showcases my projects, technical skills, education, certifications, and contact information in a clean and professional interface.
+A cutting-edge, highly interactive, and visually stunning developer portfolio website built using **React 19** and **Vite**. This portfolio incorporates modern design trends like glassmorphism, dynamic theme switches, interactive 3D tilt effects, an AI-powered chat assistant, a developer terminal, and a live stats dashboard.
 
-## 🌐 Live Demo
+## 🌐 Live Site
 
-**Website:** https://piyush-jain-portfolio.vercel.app
-
----
-
-# 📌 Overview
-
-This portfolio serves as my personal website where visitors can:
-
-* Learn about me
-* Explore my technical skills
-* View featured projects
-* Check my education and achievements
-* Download my resume
-* Contact me through multiple platforms
-
-The website is designed with a modern UI, smooth navigation, and is fully responsive across desktop, tablet, and mobile devices.
+*   **Portfolio Website:** [https://piyush-jain-portfolio.vercel.app](https://piyush-jain-portfolio.vercel.app)
 
 ---
 
-# ✨ Features
+## ✨ Features
 
-* 🎨 Modern and Professional UI
-* 📱 Fully Responsive Design
-* ⚡ Fast Performance with Vite
-* 👨‍💻 About Me Section
-* 🛠 Skills Showcase
-* 📂 Featured Projects
-* 📄 Resume Download
-* 📞 Contact Section
-* 🔗 Social Media Links
-* 📧 Easy Communication
-* 🌙 Clean Layout
-* 🚀 Optimized for Deployment
-
----
-
-# 🛠 Tech Stack
-
-### Frontend
-
-* React.js
-* Vite
-* JavaScript (ES6+)
-* HTML5
-* CSS3
-
-### Deployment
-
-* Vercel
+*   **🎨 Dynamic Design System**: Glassmorphic, modern UI with smooth transitions and theme switching across multiple curated palettes:
+    *   `Dark` (Default Sleek Space Dark)
+    *   `Light` (Clean Slate Blue)
+    *   `Cyberpunk` (Neon Yellow, Red & Turquoise)
+    *   `Forest` (Serene Emerald Green)
+*   **🤖 AI Chat Assistant**: Integrated conversational chatbot powered by **Google Gemini API** (`@google/generative-ai`) to answer questions about me, my experience, and skills in real-time.
+*   **💻 Interactive Terminal**: A functional, draggable UNIX-like terminal shell widget permitting users to run command-line actions (`help`, `about`, `skills`, `projects`, `contact`, `clear`) to explore the portfolio.
+*   **📊 Live API Dashboard**:
+    *   **GitHub Integration**: Live-fetches stats, total stars, forks, contributions, language distribution donut charts, and recent repositories.
+    *   **LeetCode Integration**: Displays ranking, solved questions (categorized by Easy/Medium/Hard with SVG progress rings), and recent submission statistics.
+*   **✨ Immersive Micro-interactions**:
+    *   **3D Hover Cards**: Native React hook-based hover tilt mechanics (`useTilt`) with specular glare tracking on project/skill components.
+    *   **Smooth Scroll**: Powered by **Lenis Scroll** for momentum-based natural scrolling.
+    *   **Scroll Reveal**: Performance-focused intersection-observer reveal triggers.
+    *   **Mouse Spotlight**: Spotlight gradient overlay following cursor movements.
 
 ---
 
-# 📁 Project Structure
+## 🛠️ Technology Stack
+
+### Frontend & Utilities
+*   **Core**: React 19, JavaScript (ES6+), HTML5, Vanilla CSS3 (Single entry-point architecture)
+*   **Build System**: Vite (Lightning-fast dev server and bundle compilation)
+*   **Icons**: `react-feather`, `react-icons`
+*   **Smooth Scroll**: `lenis`
+
+### AI & APIs
+*   **LLM Integration**: Google Gemini API SDK (`@google/generative-ai`)
+*   **Data APIs**: GitHub REST API & LeetCode API
+
+---
+
+## 📁 Clean Directory Structure
 
 ```text
-portfolio/
-│
+Piyush_jain_Portfolio/
 ├── public/
-│
+│   └── assets/             # Project screenshots & images (e.g. travel_app, clubonix_app)
 ├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── pages/
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-│
-├── package.json
-├── vite.config.js
-└── README.md
+│   ├── assets/             # App icons & profile media
+│   ├── components/         # Reusable React components (Navbar, Hero, About, Projects, etc.)
+│   ├── hooks/              # Custom hooks (useTilt, useMagnetic)
+│   ├── App.css             # Unified project stylesheet (merged & optimized)
+│   ├── App.jsx             # Main application orchestrator
+│   └── main.jsx            # React root entry point
+├── vite.config.js          # Vite config
+├── package.json            # Project dependencies & build script definitions
+└── README.md               # Documentation
 ```
 
 ---
 
-# 🚀 Installation
+## 🚀 Installation & Running Locally
 
-Clone the repository
-
+### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/your-repository.git
+git clone https://github.com/Piyushjain1857/Piyush_jain_Portfolio.git
+cd Piyush_jain_Portfolio
 ```
 
-Go into the project directory
-
-```bash
-cd your-repository
+### 2. Configure Environment Variables
+Create a `.env` file in the root directory and add your Google Gemini API key:
+```env
+VITE_GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
-Install dependencies
-
+### 3. Install dependencies
 ```bash
 npm install
 ```
 
-Run the development server
-
+### 4. Run the development server
 ```bash
 npm run dev
 ```
 
-Build for production
-
+### 5. Build and preview for production
 ```bash
 npm run build
-```
-
-Preview the production build
-
-```bash
 npm run preview
 ```
 
 ---
 
-# 📸 Website Sections
+## 👨‍💻 Selected Projects Featured
 
-* Home
-* About
-* Skills
-* Projects
-* Education
-* Experience (if available)
-* Certifications
-* Contact
-* Footer
+*   **Curio** (AI / Full-Stack): Unified AI playground connecting multiple model endpoints.
+*   **Travel App** (React / Vite): Full-scale travel planner featuring daily itineraries, spending charts, and smooth Framer Motion-like routing animations.
+*   **CLUBONIX™** (HTML / CSS / JS): Bespoke landing experience with particle physics canvases and custom preloader routines.
+*   **Agro AI** (Machine Learning): Crops predictive analytics pipeline with FastAPI backend.
+*   **Cyber Guardian** (Security): Real-time network anomaly logs analyzer using ELK.
+*   **MediCare+** (Healthcare / Full-Stack): Appointments booking system.
 
 ---
 
-# 🎯 Goals
+## 🤝 Contributing
 
-This project was built to:
-
-* Showcase my development skills
-* Present my projects professionally
-* Build a strong online presence
-* Demonstrate React development experience
-* Practice responsive web design
-
----
-
-# 📈 Future Improvements
-
-* Dark / Light Mode
-* Blog Section
-* Project Filtering
-* Animations with Framer Motion
-* GitHub Contribution Graph
-* Visitor Analytics
-* Multi-language Support
-* Backend Contact Form
-* AI Chat Assistant
-
----
-
-# 🤝 Contributing
-
-Contributions, suggestions, and feedback are always welcome.
-
-Feel free to fork the repository and create a pull request.
-
----
-
-# 📬 Contact
-
-If you'd like to connect, collaborate, or discuss opportunities, feel free to reach out through the contact section on the website or connect with me on my social platforms.
-
----
-
-# ⭐ Support
-
-If you found this project helpful, please consider giving it a ⭐ on GitHub.
-
-It motivates me to build more amazing projects.
-
----
+Contributions, suggestions, and feedback are always welcome. Feel free to fork the repository, open issues, or create pull requests.
 
 ## 📄 License
 
 This project is licensed under the MIT License.
 
----
-
 ## 👨‍💻 Author
-
-**Piyush Jain**
-
-Full Stack Developer | AI & Data Science Student
-
-Made with ❤️ using React and Vite.
+**Piyush Jain**  
+Full Stack Developer | AI & Data Science Specialist
