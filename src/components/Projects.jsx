@@ -98,6 +98,20 @@ export default function Projects() {
             demo: "#"
         },
         {
+            category: "React / Vite App",
+            title: "Travel App",
+            desc: "A premium travel planning platform designed to budget, plan, and organize trips day-by-day. Features interactive itinerary builders, visual expense analytics, and fluid animations.",
+            tech: [
+                { name: "React", url: "https://react.dev/" },
+                { name: "Vite", url: "https://vitejs.dev/" },
+                { name: "Framer Motion", url: "https://www.framer.com/motion/" },
+                { name: "Recharts", url: "https://recharts.org/" }
+            ],
+            img: "/assets/travel_app.png",
+            github: "https://github.com/Piyushjain1857/Travel",
+            demo: "https://travel-one-beryl.vercel.app"
+        },
+        {
             category: "Entertainment / Full-Stack",
             title: "StreamHub",
             desc: "A sleek, Netflix-inspired video streaming platform with dynamic content discovery, trending carousels, genre filtering, and a cinematic UI built for modern audiences.",
@@ -160,6 +174,19 @@ export default function Projects() {
             img: "/assets/health_center.png",
             github: "https://github.com/piyushjain1857/web_development_project-1",
             demo: "https://piyushjain1857.github.io/Health-Center/"
+        },
+        {
+            category: "HTML / CSS / JS",
+            title: "CLUBONIX™",
+            desc: "A bespoke landing page for Delhi NCR's exclusive nightlife and creator community. Features custom canvas particle effects, preloader sequence, custom cursor, and a luxury design aesthetic.",
+            tech: [
+                { name: "HTML", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+                { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+                { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }
+            ],
+            img: "/assets/clubonix_app.png",
+            github: "https://github.com/Piyushjain1857/CLUBONIX",
+            demo: "https://piyushjain1857.github.io/CLUBONIX/"
         },
         {
             category: "HTML / CSS / JS",
