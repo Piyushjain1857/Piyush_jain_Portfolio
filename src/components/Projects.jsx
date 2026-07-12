@@ -72,19 +72,19 @@ export default function Projects() {
             github_Backend: "https://github.com/Piyushjain1857/AgroAi-backend.git",
             demo: "#"
         },
-        {
-            category: "Security",
-            title: "Cyber Guardian",
-            desc: "Automated threat detection system analyzing network logs in real-time utilizing anomaly detection algorithms.",
-            tech: [
-                { name: "Python", url: "https://www.python.org/" },
-                { name: "ELK Stack", url: "https://www.elastic.co/elastic-stack/" },
-                { name: "Docker", url: "https://www.docker.com/" }
-            ],
-            img: "/assets/cyber_guardian.png",
-            github: "https://github.com/Piyushjain1857",
-            demo: "#"
-        },
+        // {
+        //     category: "Security",
+        //     title: "Cyber Guardian",
+        //     desc: "Automated threat detection system analyzing network logs in real-time utilizing anomaly detection algorithms.",
+        //     tech: [
+        //         { name: "Python", url: "https://www.python.org/" },
+        //         { name: "ELK Stack", url: "https://www.elastic.co/elastic-stack/" },
+        //         { name: "Docker", url: "https://www.docker.com/" }
+        //     ],
+        //     img: "/assets/cyber_guardian.png",
+        //     github: "https://github.com/Piyushjain1857",
+        //     demo: "#"
+        // },
         {
             category: "Web App",
             title: "Hostel Leave Management",
@@ -98,175 +98,175 @@ export default function Projects() {
             github: "https://github.com/Piyushjain1857",
             demo: "#"
         },
-        {
-            category: "React / Vite App",
-            title: "Travel App",
-            desc: "A premium travel planning platform designed to budget, plan, and organize trips day-by-day. Features interactive itinerary builders, visual expense analytics, and fluid animations.",
-            tech: [
-                { name: "React", url: "https://react.dev/" },
-                { name: "Vite", url: "https://vitejs.dev/" },
-                { name: "Framer Motion", url: "https://www.framer.com/motion/" },
-                { name: "Recharts", url: "https://recharts.org/" }
-            ],
-            img: "/assets/travel_app.png",
-            github: "https://github.com/Piyushjain1857/Travel",
-            demo: "https://travel-one-beryl.vercel.app"
-        },
-        {
-            category: "Entertainment / Full-Stack",
-            title: "StreamHub",
-            desc: "A sleek, Netflix-inspired video streaming platform with dynamic content discovery, trending carousels, genre filtering, and a cinematic UI built for modern audiences.",
-            tech: [
-                { name: "React", url: "https://react.dev/" },
-                { name: "Vite", url: "https://vitejs.dev/" },
-                { name: "TMDB API", url: "https://developer.themoviedb.org/docs" }
-            ],
-            img: "/assets/streamhub_app.png",
-            github: "https://github.com/Piyushjain1857",
-            demo: "https://streamhub-dusky.vercel.app"
-        },
-        {
-            category: "Healthcare / Full-Stack",
-            title: "MediCare+",
-            desc: "A premium healthcare appointment booking platform featuring doctor discovery, real-time slot availability, health metrics tracking, and a seamless patient-doctor interface.",
-            tech: [
-                { name: "React", url: "https://react.dev/" },
-                { name: "Node.js", url: "https://nodejs.org/" },
-            ],
-            img: "/assets/healthcare_app.png",
-            github: "https://github.com/Piyushjain1857",
-            demo: "https://healthcare-appointment-system-mu.vercel.app"
-        },
-        {
-            category: "UI / React",
-            title: "Maison Dorée",
-            desc: "An elegant luxury restaurant web experience featuring a curated menu, table reservation system, and an immersive fine-dining aesthetic with rich typography and ambient design.",
-            tech: [
-                { name: "React", url: "https://react.dev/" },
-                { name: "Vite", url: "https://vitejs.dev/" },
-                { name: "CSS3", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" }
-            ],
-            img: "/assets/maison_doree_app.png",
-            github: "https://github.com/Piyushjain1857/Maison-Doree.git",
-            demo: "https://maison-doree-jewellery.vercel.app"
-        },
-        {
-            category: "HTML / CSS / JS",
-            title: "The Bodyline GYM",
-            desc: "A high-impact gym fitness website with membership plans, workout class schedules, trainer profiles, and a bold dark theme with neon orange accents.",
-            tech: [
-                { name: "HTML", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-                { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
-                { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }
-            ],
-            img: "/assets/bodyline_gym.png",
-            github: "https://github.com/piyushjain1857/The_Bodyline_GYM",
-            demo: "https://piyushjain1857.github.io/The_Bodyline_GYM/"
-        },
-        {
-            category: "HTML / CSS / JS",
-            title: "Health Center",
-            desc: "A professional medical website showcasing healthcare services including cardiology, dentistry, and orthopedics, with a doctor directory and online appointment booking.",
-            tech: [
-                { name: "HTML", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-                { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
-                { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }
-            ],
-            img: "/assets/health_center.png",
-            github: "https://github.com/piyushjain1857/web_development_project-1",
-            demo: "https://piyushjain1857.github.io/Health-Center/"
-        },
-        {
-            category: "HTML / CSS / JS",
-            title: "CLUBONIX™",
-            desc: "A bespoke landing page for Delhi NCR's exclusive nightlife and creator community. Features custom canvas particle effects, preloader sequence, custom cursor, and a luxury design aesthetic.",
-            tech: [
-                { name: "HTML", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-                { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
-                { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }
-            ],
-            img: "/assets/clubonix_app.png",
-            github: "https://github.com/Piyushjain1857/CLUBONIX",
-            demo: "https://piyushjain1857.github.io/CLUBONIX/"
-        },
-        {
-            category: "HTML / CSS / JS",
-            title: "Inner Peace",
-            desc: "A serene mindfulness and mental wellness website featuring guided meditation resources, yoga practices, breathing exercises, and a calming lavender and sage green aesthetic.",
-            tech: [
-                { name: "HTML", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-                { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
-                { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }
-            ],
-            img: "/assets/inner_peace.png",
-            github: "https://github.com/piyushjain1857/Inner-Peace-Project",
-            demo: "https://piyushjain1857.github.io/Inner-Peace-Project/"
-        },
-        {
-            category: "HTML / CSS / JS",
-            title: "Restaurant Website",
-            desc: "A warm and inviting restaurant website with a hero food banner, menu categories, table reservation form, and smooth navigation across Home, About, Work and Service sections.",
-            tech: [
-                { name: "HTML", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-                { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
-                { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }
-            ],
-            img: "/assets/restaurant_project.png",
-            github: "https://github.com/piyushjain1857/Restorent-Project",
-            demo: "https://piyushjain1857.github.io/Restorent-Project/"
-        },
-        {
-            category: "HTML / CSS / JS · Game",
-            title: "Limbo Reflex Game",
-            desc: "A fast-paced browser reflex game where players dodge a moving bar using keyboard controls. Features score tracking, lives system, and a neon retro arcade aesthetic.",
-            tech: [
-                { name: "HTML", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-                { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
-                { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }
-            ],
-            img: "/assets/limbo_game.png",
-            github: "https://github.com/piyushjain1857/Limbo",
-            demo: "https://piyushjain1857.github.io/Limbo/"
-        },
-        {
-            category: "HTML / CSS / JS · Game",
-            title: "Tic Tac Toe",
-            desc: "A stylish two-player Tic Tac Toe game with a glowing neon UI, win detection, score tracking per player, and a satisfying animated winner announcement overlay.",
-            tech: [
-                { name: "HTML", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-                { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
-                { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }
-            ],
-            img: "/assets/tictactoe_game.png",
-            github: "https://github.com/piyushjain1857/Tic_Tac_Toe-Game",
-            demo: "https://piyushjain1857.github.io/Tic_Tac_Toe-Game/"
-        },
-        {
-            category: "HTML / CSS / JS · Game",
-            title: "Rock Paper Scissors",
-            desc: "A neon cyberpunk edition of Rock Paper Scissors where players battle the computer. Features glowing choice buttons, animated WIN/LOSE/DRAW results, and a live scoreboard.",
-            tech: [
-                { name: "HTML", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-                { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
-                { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }
-            ],
-            img: "/assets/rock_paper_scissors.png",
-            github: "https://github.com/piyushjain1857/Rock_Paper_Scisers",
-            demo: "https://piyushjain1857.github.io/Rock_Paper_Scisers/"
-        },
-        {
-            category: "HTML / CSS / JS · Game",
-            title: "Mines",
-            desc: "A strategic browser-based logic game where players must uncover safe tiles while avoiding hidden mines. Built with vanilla web technologies for a smooth interactive experience.",
-            tech: [
-                { name: "HTML", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-                { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
-                { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }
-            ],
-            img: "https://images.unsplash.com/photo-1614294149010-950b698f72c0?auto=format&fit=crop&w=600&q=80",
-            github: "https://github.com/Piyushjain1857/Mines",
-            demo: "https://piyushjain1857.github.io/Mines/"
-        }
+    //     {
+    //         category: "React / Vite App",
+    //         title: "Travel App",
+    //         desc: "A premium travel planning platform designed to budget, plan, and organize trips day-by-day. Features interactive itinerary builders, visual expense analytics, and fluid animations.",
+    //         tech: [
+    //             { name: "React", url: "https://react.dev/" },
+    //             { name: "Vite", url: "https://vitejs.dev/" },
+    //             { name: "Framer Motion", url: "https://www.framer.com/motion/" },
+    //             { name: "Recharts", url: "https://recharts.org/" }
+    //         ],
+    //         img: "/assets/travel_app.png",
+    //         github: "https://github.com/Piyushjain1857/Travel",
+    //         demo: "https://travel-one-beryl.vercel.app"
+    //     },
+    //     {
+    //         category: "Entertainment / Full-Stack",
+    //         title: "StreamHub",
+    //         desc: "A sleek, Netflix-inspired video streaming platform with dynamic content discovery, trending carousels, genre filtering, and a cinematic UI built for modern audiences.",
+    //         tech: [
+    //             { name: "React", url: "https://react.dev/" },
+    //             { name: "Vite", url: "https://vitejs.dev/" },
+    //             { name: "TMDB API", url: "https://developer.themoviedb.org/docs" }
+    //         ],
+    //         img: "/assets/streamhub_app.png",
+    //         github: "https://github.com/Piyushjain1857",
+    //         demo: "https://streamhub-dusky.vercel.app"
+    //     },
+    //     {
+    //         category: "Healthcare / Full-Stack",
+    //         title: "MediCare+",
+    //         desc: "A premium healthcare appointment booking platform featuring doctor discovery, real-time slot availability, health metrics tracking, and a seamless patient-doctor interface.",
+    //         tech: [
+    //             { name: "React", url: "https://react.dev/" },
+    //             { name: "Node.js", url: "https://nodejs.org/" },
+    //         ],
+    //         img: "/assets/healthcare_app.png",
+    //         github: "https://github.com/Piyushjain1857",
+    //         demo: "https://healthcare-appointment-system-mu.vercel.app"
+    //     },
+    //     {
+    //         category: "UI / React",
+    //         title: "Maison Dorée",
+    //         desc: "An elegant luxury restaurant web experience featuring a curated menu, table reservation system, and an immersive fine-dining aesthetic with rich typography and ambient design.",
+    //         tech: [
+    //             { name: "React", url: "https://react.dev/" },
+    //             { name: "Vite", url: "https://vitejs.dev/" },
+    //             { name: "CSS3", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" }
+    //         ],
+    //         img: "/assets/maison_doree_app.png",
+    //         github: "https://github.com/Piyushjain1857/Maison-Doree.git",
+    //         demo: "https://maison-doree-jewellery.vercel.app"
+    //     },
+    //     {
+    //         category: "HTML / CSS / JS",
+    //         title: "The Bodyline GYM",
+    //         desc: "A high-impact gym fitness website with membership plans, workout class schedules, trainer profiles, and a bold dark theme with neon orange accents.",
+    //         tech: [
+    //             { name: "HTML", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+    //             { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+    //             { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }
+    //         ],
+    //         img: "/assets/bodyline_gym.png",
+    //         github: "https://github.com/piyushjain1857/The_Bodyline_GYM",
+    //         demo: "https://piyushjain1857.github.io/The_Bodyline_GYM/"
+    //     },
+    //     {
+    //         category: "HTML / CSS / JS",
+    //         title: "Health Center",
+    //         desc: "A professional medical website showcasing healthcare services including cardiology, dentistry, and orthopedics, with a doctor directory and online appointment booking.",
+    //         tech: [
+    //             { name: "HTML", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+    //             { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+    //             { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }
+    //         ],
+    //         img: "/assets/health_center.png",
+    //         github: "https://github.com/piyushjain1857/web_development_project-1",
+    //         demo: "https://piyushjain1857.github.io/Health-Center/"
+    //     },
+    //     {
+    //         category: "HTML / CSS / JS",
+    //         title: "CLUBONIX™",
+    //         desc: "A bespoke landing page for Delhi NCR's exclusive nightlife and creator community. Features custom canvas particle effects, preloader sequence, custom cursor, and a luxury design aesthetic.",
+    //         tech: [
+    //             { name: "HTML", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+    //             { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+    //             { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }
+    //         ],
+    //         img: "/assets/clubonix_app.png",
+    //         github: "https://github.com/Piyushjain1857/CLUBONIX",
+    //         demo: "https://piyushjain1857.github.io/CLUBONIX/"
+    //     },
+    //     {
+    //         category: "HTML / CSS / JS",
+    //         title: "Inner Peace",
+    //         desc: "A serene mindfulness and mental wellness website featuring guided meditation resources, yoga practices, breathing exercises, and a calming lavender and sage green aesthetic.",
+    //         tech: [
+    //             { name: "HTML", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+    //             { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+    //             { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }
+    //         ],
+    //         img: "/assets/inner_peace.png",
+    //         github: "https://github.com/piyushjain1857/Inner-Peace-Project",
+    //         demo: "https://piyushjain1857.github.io/Inner-Peace-Project/"
+    //     },
+    //     {
+    //         category: "HTML / CSS / JS",
+    //         title: "Restaurant Website",
+    //         desc: "A warm and inviting restaurant website with a hero food banner, menu categories, table reservation form, and smooth navigation across Home, About, Work and Service sections.",
+    //         tech: [
+    //             { name: "HTML", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+    //             { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+    //             { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }
+    //         ],
+    //         img: "/assets/restaurant_project.png",
+    //         github: "https://github.com/piyushjain1857/Restorent-Project",
+    //         demo: "https://piyushjain1857.github.io/Restorent-Project/"
+    //     },
+    //     {
+    //         category: "HTML / CSS / JS · Game",
+    //         title: "Limbo Reflex Game",
+    //         desc: "A fast-paced browser reflex game where players dodge a moving bar using keyboard controls. Features score tracking, lives system, and a neon retro arcade aesthetic.",
+    //         tech: [
+    //             { name: "HTML", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+    //             { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+    //             { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }
+    //         ],
+    //         img: "/assets/limbo_game.png",
+    //         github: "https://github.com/piyushjain1857/Limbo",
+    //         demo: "https://piyushjain1857.github.io/Limbo/"
+    //     },
+    //     {
+    //         category: "HTML / CSS / JS · Game",
+    //         title: "Tic Tac Toe",
+    //         desc: "A stylish two-player Tic Tac Toe game with a glowing neon UI, win detection, score tracking per player, and a satisfying animated winner announcement overlay.",
+    //         tech: [
+    //             { name: "HTML", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+    //             { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+    //             { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }
+    //         ],
+    //         img: "/assets/tictactoe_game.png",
+    //         github: "https://github.com/piyushjain1857/Tic_Tac_Toe-Game",
+    //         demo: "https://piyushjain1857.github.io/Tic_Tac_Toe-Game/"
+    //     },
+    //     {
+    //         category: "HTML / CSS / JS · Game",
+    //         title: "Rock Paper Scissors",
+    //         desc: "A neon cyberpunk edition of Rock Paper Scissors where players battle the computer. Features glowing choice buttons, animated WIN/LOSE/DRAW results, and a live scoreboard.",
+    //         tech: [
+    //             { name: "HTML", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+    //             { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+    //             { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }
+    //         ],
+    //         img: "/assets/rock_paper_scissors.png",
+    //         github: "https://github.com/piyushjain1857/Rock_Paper_Scisers",
+    //         demo: "https://piyushjain1857.github.io/Rock_Paper_Scisers/"
+    //     },
+    //     {
+    //         category: "HTML / CSS / JS · Game",
+    //         title: "Mines",
+    //         desc: "A strategic browser-based logic game where players must uncover safe tiles while avoiding hidden mines. Built with vanilla web technologies for a smooth interactive experience.",
+    //         tech: [
+    //             { name: "HTML", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+    //             { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+    //             { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }
+    //         ],
+    //         img: "https://images.unsplash.com/photo-1614294149010-950b698f72c0?auto=format&fit=crop&w=600&q=80",
+    //         github: "https://github.com/Piyushjain1857/Mines",
+    //         demo: "https://piyushjain1857.github.io/Mines/"
+    //     }
     ];
 
     return (

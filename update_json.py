@@ -66,7 +66,7 @@ terminal_updates_en = {
     "commands": {
         "help": "Available commands: help, about, projects, resume, skills, contact, github, theme, clear, sudo hire piyush",
         "about": "Piyush Jain is a Full-Stack Software Engineer building scalable backend systems and intelligent AI integrations.",
-        "projects": "Featured: Curio, Agro AI, StreamHub, Cyber Guardian. Type 'github' to see more.",
+        "projects": "Featured: Curio, Agro AI,  Hostel Leave Management. Type 'github' to see more.",
         "skills": "Languages: Python, JavaScript | Frameworks: React, Node.js, FastAPI | Tools: Docker, AWS, Git",
         "contact": "Email: Piyushjain1857@gmail.com | Phone: +91 8595850153",
         "github": "Redirecting to GitHub...",
@@ -82,7 +82,7 @@ terminal_updates_hi = {
     "commands": {
         "help": "उपलब्ध कमांड: help, about, projects, resume, skills, contact, github, theme, clear, sudo hire piyush",
         "about": "पीयूष जैन एक फुल-स्टैक सॉफ्टवेयर इंजीनियर हैं जो स्केलेबल बैकएंड सिस्टम और बुद्धिमान एआई इंटीग्रेशन बनाते हैं।",
-        "projects": "प्रमुख: Curio, Agro AI, StreamHub, Cyber Guardian। अधिक देखने के लिए 'github' टाइप करें।",
+        "projects": "प्रमुख: Curio,  Hostel Leave Management। अधिक देखने के लिए 'github' टाइप करें।",
         "skills": "भाषाएं: Python, JavaScript | फ्रेमवर्क: React, Node.js, FastAPI | टूल्स: Docker, AWS, Git",
         "contact": "ईमेल: Piyushjain1857@gmail.com | फ़ोन: +91 8595850153",
         "github": "गिटहब पर रीडायरेक्ट कर रहा है...",

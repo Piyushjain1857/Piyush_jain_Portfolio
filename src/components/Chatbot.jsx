@@ -16,14 +16,14 @@ He confidently uses both JavaScript and TypeScript in his projects.
 His projects: 
 1. Curio: Premium AI platform integrating diverse AI models (React, Node.js, OpenAI API)
 2. Agro AI: Predictive analytics system for farmers using ML (Python, TensorFlow, FastAPI)
-3. Cyber Guardian: Automated threat detection analyzing network logs in real-time (Python, ELK Stack, Docker)
-4. Hostel Leave Management: Full-stack system for students and wardens (React, Node.js, PostgreSQL)
-5. StreamHub: Netflix-inspired video streaming platform (React, Vite, TMDB API)
-6. MediCare+: Healthcare appointment booking platform (React, Node.js)
-7. Maison Dorée: Luxury restaurant web experience (React, Vite, CSS3)
-8. Jarvis AI Assistant: Voice-activated AI assistant for macOS
-9. Auto-Job Apply Bot: Selenium-based automation tool for job applications
-10. HTML/CSS/JS Projects & Games: The Bodyline GYM, Health Center, Inner Peace, Restaurant Website, Limbo Reflex Game, Tic Tac Toe, Rock Paper Scissors, Mines.
+3. Hostel Leave Management: Full-stack system for students and wardens (React, Node.js, PostgreSQL)
+// 4. Cyber Guardian: Automated threat detection analyzing network logs in real-time (Python, ELK Stack, Docker)
+// 5. StreamHub: Netflix-inspired video streaming platform (React, Vite, TMDB API)
+// 6. MediCare+: Healthcare appointment booking platform (React, Node.js)
+// 7. Maison Dorée: Luxury restaurant web experience (React, Vite, CSS3)
+// 8. Jarvis AI Assistant: Voice-activated AI assistant for macOS
+// 9. Auto-Job Apply Bot: Selenium-based automation tool for job applications
+// 10. HTML/CSS/JS Projects & Games: The Bodyline GYM, Health Center, Inner Peace, Restaurant Website, Limbo Reflex Game, Tic Tac Toe, Rock Paper Scissors, Mines.
 
 Contact info: Email at Piyushjain1857@gmail.com or call +91 8595850153.
 Education: He is constantly learning and building, turning caffeine into code.

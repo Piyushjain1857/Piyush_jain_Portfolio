@@ -97,11 +97,12 @@ npm run preview
 ## 👨‍💻 Selected Projects Featured
 
 *   **Curio** (AI / Full-Stack): Unified AI playground connecting multiple model endpoints.
-*   **Travel App** (React / Vite): Full-scale travel planner featuring daily itineraries, spending charts, and smooth Framer Motion-like routing animations.
-*   **CLUBONIX™** (HTML / CSS / JS): Bespoke landing experience with particle physics canvases and custom preloader routines.
+<!-- *   **Travel App** (React / Vite): Full-scale travel planner featuring daily itineraries, spending charts, and smooth Framer Motion-like routing animations.
+*   **CLUBONIX™** (HTML / CSS / JS): Bespoke landing experience with particle physics canvases and custom preloader routines. -->
 *   **Agro AI** (Machine Learning): Crops predictive analytics pipeline with FastAPI backend.
-*   **Cyber Guardian** (Security): Real-time network anomaly logs analyzer using ELK.
-*   **MediCare+** (Healthcare / Full-Stack): Appointments booking system.
+<!-- *   **Cyber Guardian** (Security): Real-time network anomaly logs analyzer using ELK.
+*   **MediCare+** (Healthcare / Full-Stack): Appointments booking system. -->
+*   **Hostel Leave Management System** A full-stack hostel leave management system enabling students to apply for leaves, track approval status, and allowing wardens to manage requests via an admin dashboard.
 
 ---
 
