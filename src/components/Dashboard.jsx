@@ -109,7 +109,7 @@ export default function Dashboard() {
             const BASE = 'https://alfa-leetcode-api.onrender.com';
             
             // Try to load cached data first for instant UI or as a fallback
-            const cachedData = localStorage.getItem('leetcodeCache');
+            const cachedData = localStorage.getItem('leetcodeCacheV2');
             if (cachedData) {
                 try {
                     const parsed = JSON.parse(cachedData);
@@ -134,13 +134,35 @@ export default function Dashboard() {
                 setLeetcodeData(newData);
                 
                 // Save the fresh successful data to cache
-                localStorage.setItem('leetcodeCache', JSON.stringify({
+                localStorage.setItem('leetcodeCacheV2', JSON.stringify({
                     timestamp: Date.now(),
                     data: newData
                 }));
             } catch (err) {
                 console.error('LeetCode fetch error:', err);
-                // If API fails, we just rely on the cached data (if it exists)
+                // If API fails, provide fallback data
+                if (!leetcodeData) {
+                    setLeetcodeData({
+                        profile: {
+                            ranking: 357558,
+                            userAvatar: "https://assets.leetcode.com/users/piyushjain1857/avatar_1768975454.png",
+                            realName: "Piyush Jain",
+                            aboutMe: ""
+                        },
+                        solved: {
+                            solvedProblem: 372,
+                            easySolved: 99,
+                            mediumSolved: 209,
+                            hardSolved: 64,
+                            acSubmissionNum: [
+                                { difficulty: "All", count: 372, submissions: 431 },
+                                { difficulty: "Easy", count: 99, submissions: 130 },
+                                { difficulty: "Medium", count: 209, submissions: 229 },
+                                { difficulty: "Hard", count: 64, submissions: 72 }
+                            ]
+                        }
+                    });
+                }
             } finally {
                 setLoadingLeetcode(false);
             }
@@ -328,7 +350,7 @@ export default function Dashboard() {
         const medSolved = solved.mediumSolved || 0;
         const hardSolved = solved.hardSolved || 0;
 
-        const totals = { easy: 869, medium: 1826, hard: 824 }; // LeetCode approximate totals
+        const totals = { easy: 960, medium: 2103, hard: 966 }; // LeetCode approximate totals
         const easyPct = Math.min((easySolved / totals.easy) * 100, 100).toFixed(1);
         const medPct = Math.min((medSolved / totals.medium) * 100, 100).toFixed(1);
         const hardPct = Math.min((hardSolved / totals.hard) * 100, 100).toFixed(1);
