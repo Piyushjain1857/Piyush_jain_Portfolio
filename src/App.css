@@ -688,6 +688,57 @@
     box-shadow: 0 4px 12px var(--accent-glow);
 }
 
+/* ─── Projects Filter ─── */
+.projects-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-5);
+}
+
+.project-filter-btn {
+    padding: 0.6rem 1.4rem;
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-color);
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-filter-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--accent-1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.project-filter-btn.active {
+    color: #fff;
+    background: var(--accent-1);
+    border-color: var(--accent-1);
+    box-shadow: 0 4px 16px var(--accent-glow);
+}
+
+.project-filter-badge {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.72rem;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.project-filter-btn.active .project-filter-badge {
+    background: rgba(0, 0, 0, 0.25);
+    color: #fff;
+}
+
 /* ─── Projects ─── */
 .projects-grid {
     display: grid;
@@ -926,12 +977,14 @@
 
 .gh-pill-val {
     font-family: var(--font-display);
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     font-weight: 800;
+    color: var(--accent-1);
     background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    display: inline-block;
 }
 
 .gh-pill-lbl {
@@ -1362,18 +1415,22 @@
     align-items: center;
     justify-content: center;
     gap: 2px;
+    z-index: 2;
+    pointer-events: none;
 }
 
 .lc-total-num {
     font-family: var(--font-display);
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 800;
-    color: #ffa116;
+    color: #ffa116 !important;
     line-height: 1;
+    display: block;
 }
 
 .lc-total-lbl {
-    font-size: 0.65rem;
+    font-size: 0.7rem;
+    font-weight: 600;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -2611,6 +2668,37 @@ ul {
 
 :root[data-theme="light"] .lc-diff.hard {
     color: #dc2626;
+}
+
+:root[data-theme="light"] .gh-pill-val {
+    color: #4f46e5 !important;
+    -webkit-text-fill-color: #4f46e5 !important;
+}
+
+:root[data-theme="light"] .lc-total-num {
+    color: #ea580c !important;
+}
+
+:root[data-theme="light"] .lc-rank-value {
+    color: #ea580c !important;
+    -webkit-text-fill-color: #ea580c !important;
+}
+
+:root[data-theme="light"] .lc-bar-count {
+    color: #0f172a !important;
+}
+
+:root[data-theme="light"] .lc-sub-count {
+    color: #0f172a !important;
+}
+
+:root[data-theme="light"] .lc-sub-table td {
+    color: #334155 !important;
+}
+
+:root[data-theme="light"] .gh-pill {
+    background: rgba(0, 0, 0, 0.02) !important;
+    border-color: rgba(0, 0, 0, 0.08) !important;
 }
 
 :root[data-theme="light"] .gh-cta-btn {

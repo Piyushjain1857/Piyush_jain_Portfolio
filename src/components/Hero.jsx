@@ -7,6 +7,7 @@ export default function Hero() {
     const [particles, setParticles] = useState([]);
     const viewWorkRef = useMagnetic();
     const contactRef = useMagnetic();
+    const resumeRef = useMagnetic();
 
     const phrases = [
         "Scalable Backend Systems.",
@@ -134,6 +135,7 @@ export default function Hero() {
                 <div className="hero-cta">
                     <a href="#projects" ref={viewWorkRef} className="btn btn-primary magnetic-btn">View Work</a>
                     <a href="#contact" ref={contactRef} className="btn btn-secondary magnetic-btn">Contact Me</a>
+                    <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" ref={resumeRef} className="btn btn-outline magnetic-btn">Resume ↗</a>
                 </div>
                 <div className="social-links hero-social">
                     <a href="https://github.com/Piyushjain1857" target="_blank" rel="noopener noreferrer" aria-label="GitHub">

@@ -15,9 +15,10 @@ export default function Terminal() {
     const commands = {
         help: "Available commands: help, about, projects, resume, skills, contact, github, theme, clear, sudo hire piyush",
         about: "Piyush Jain is a Full-Stack Software Engineer building scalable backend systems and intelligent AI integrations.",
-        projects: "Featured: Curio, Agro AI, Hostel Leave Management. Type 'github' to see more.",
-        skills: "Languages: Python, JavaScript | Frameworks: React, Node.js, FastAPI | Tools: Docker, AWS, Git",
+        projects: "Featured: Superpower AR Engine, Chicken Roads, Mines, Curio AI, Agro AI, Hostel Leave Management, FORTUNA. Type 'github' to see all 75+ repos.",
+        skills: "Languages: Python, JavaScript, TypeScript | AI/ML: Gemini, LangChain, OpenCV | Games: MediaPipe, Web Audio API, ModernGL | Backend: Node.js, FastAPI, PostgreSQL",
         contact: "Email: Piyushjain1857@gmail.com | Phone: +91 8595850153",
+        resume: "Opening Piyush Jain's resume in a new tab...",
         github: "Redirecting to GitHub...",
         "sudo hire piyush": "Access Granted. Initializing offer letter protocols... just kidding, please email me at Piyushjain1857@gmail.com!",
         theme: "Use the theme switcher in the navigation bar to toggle between Dark, Cyberpunk, and Forest themes.",
@@ -56,6 +57,12 @@ export default function Terminal() {
                     setTimeout(() => {
                         window.open('https://github.com/Piyushjain1857', '_blank');
                     }, 1000);
+                }
+                // Handle redirect for resume
+                if (cmd === 'resume') {
+                    setTimeout(() => {
+                        window.open('/resume.pdf', '_blank');
+                    }, 800);
                 }
             } else {
                 response = `bash: ${cmd}: command not found. Type 'help' for available commands.`;

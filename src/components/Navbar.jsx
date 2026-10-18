@@ -84,6 +84,16 @@ export default function Navbar({ theme, setTheme }) {
                             {item.label}
                         </a>
                     ))}
+                    <a
+                        href="/resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="nav-link mobile-resume-link"
+                        onClick={() => setMobileMenuOpen(false)}
+                        style={{ color: 'var(--accent-1)', fontWeight: '600' }}
+                    >
+                        Resume ↗
+                    </a>
                 </div>
                 <div className="nav-actions">
                     <div className={`theme-switcher ${themeMenuOpen ? 'active' : ''}`}>
@@ -117,7 +127,7 @@ export default function Navbar({ theme, setTheme }) {
                             </button>
                         </div>
                     </div>
-                    {/* <a href="/assets/resume.pdf" target="_blank" className="btn btn-outline btn-sm">Resume</a> */}
+                    <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-sm">Resume</a>
                     <button
                         id="mobile-menu-btn"
                         className="mobile-menu-btn"

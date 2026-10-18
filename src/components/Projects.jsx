@@ -1,5 +1,5 @@
-import React from 'react';
-import { GitHub, ExternalLink } from 'react-feather';
+import React, { useState, useMemo } from 'react';
+import { GitHub, ExternalLink, Play } from 'react-feather';
 import useTilt from '../hooks/useTilt';
 
 function ProjectCard({ project }) {
@@ -29,12 +29,12 @@ function ProjectCard({ project }) {
                     ))}
                 </div>
                 <div className="project-links">
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="View Source Code">
                         <GitHub size={18} />
                     </a>
                     {project.demo && project.demo !== '#' && (
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer" aria-label="Live Demo">
-                            <ExternalLink size={18} />
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer" aria-label="Live Demo" title="Open Live Project">
+                            {project.category.includes('Game') || project.category.includes('AR') ? <Play size={18} /> : <ExternalLink size={18} />}
                         </a>
                     )}
                 </div>
@@ -44,7 +44,10 @@ function ProjectCard({ project }) {
 }
 
 export default function Projects() {
+    const [activeFilter, setActiveFilter] = useState('all');
+
     const projectsData = [
+        // ─── 1. ORIGINAL PROJECTS (EXACT ORIGINAL ORDER PRESERVED) ───
         {
             category: "AI / Full-Stack",
             title: "Curio",
@@ -72,8 +75,6 @@ export default function Projects() {
             github_Backend: "https://github.com/Piyushjain1857/AgroAi-backend.git",
             demo: "#"
         },
-
-        // 
         {
             category: "Security",
             title: "Cyber Guardian",
@@ -87,8 +88,6 @@ export default function Projects() {
             github: "https://github.com/Piyushjain1857",
             demo: "#"
         },
-
-        // 
         {
             category: "Web App",
             title: "Hostel Leave Management",
@@ -99,11 +98,9 @@ export default function Projects() {
                 { name: "PostgreSQL", url: "https://www.postgresql.org/" }
             ],
             img: "/assets/hostel_leave_app.png",
-            github: "https://github.com/Piyushjain1857",
+            github: "https://github.com/Piyushjain1857/Hostel_Leave_Management_system_backend",
             demo: "#"
         },
-        // 
-
         {
             category: "React / Vite App",
             title: "Travel App",
@@ -128,7 +125,7 @@ export default function Projects() {
                 { name: "TMDB API", url: "https://developer.themoviedb.org/docs" }
             ],
             img: "/assets/streamhub_app.png",
-            github: "https://github.com/Piyushjain1857",
+            github: "https://github.com/Piyushjain1857/Streamhub",
             demo: "https://streamhub-dusky.vercel.app"
         },
         {
@@ -137,10 +134,10 @@ export default function Projects() {
             desc: "A premium healthcare appointment booking platform featuring doctor discovery, real-time slot availability, health metrics tracking, and a seamless patient-doctor interface.",
             tech: [
                 { name: "React", url: "https://react.dev/" },
-                { name: "Node.js", url: "https://nodejs.org/" },
+                { name: "Node.js", url: "https://nodejs.org/" }
             ],
             img: "/assets/healthcare_app.png",
-            github: "https://github.com/Piyushjain1857",
+            github: "https://github.com/Piyushjain1857/Healthcare-Appointment-system",
             demo: "https://healthcare-appointment-system-mu.vercel.app"
         },
         {
@@ -179,7 +176,7 @@ export default function Projects() {
                 { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }
             ],
             img: "/assets/health_center.png",
-            github: "https://github.com/piyushjain1857/web_development_project-1",
+            github: "https://github.com/piyushjain1857/Health-Center",
             demo: "https://piyushjain1857.github.io/Health-Center/"
         },
         {
@@ -272,25 +269,214 @@ export default function Projects() {
             img: "https://images.unsplash.com/photo-1614294149010-950b698f72c0?auto=format&fit=crop&w=600&q=80",
             github: "https://github.com/Piyushjain1857/Mines",
             demo: "https://piyushjain1857.github.io/Mines/"
-        }
+        },
 
-        // 
+        // ─── 2. ADDITIONAL GAMES & NEW PROJECTS ───
+        {
+            category: "HTML / CSS / JS · Game",
+            title: "Chicken Roads Arcade",
+            desc: "Casino-style horizontal arcade crossing game featuring procedural sound effects via the Web Audio API, dynamic risk multipliers, and smooth collision loops.",
+            tech: [
+                { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+                { name: "Web Audio API", url: "https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API" },
+                { name: "HTML5 Canvas", url: "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" },
+                { name: "CSS3", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" }
+            ],
+            img: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80",
+            github: "https://github.com/Piyushjain1857/Chicken_Roads",
+            demo: "https://piyushjain1857.github.io/Chicken_Roads/"
+        },
+        {
+            category: "Games & AR",
+            title: "Superpower AR Engine",
+            desc: "Cinematic real-time superhero simulator built with ModernGL shaders, OpenCV, and MediaPipe for 60 FPS gesture-triggered energy blasts, particle FX, and superhero powers.",
+            tech: [
+                { name: "Python", url: "https://www.python.org/" },
+                { name: "ModernGL", url: "https://moderngl.readthedocs.io/" },
+                { name: "MediaPipe", url: "https://developers.google.com/mediapipe" },
+                { name: "OpenCV", url: "https://opencv.org/" },
+                { name: "Pygame", url: "https://www.pygame.org/" }
+            ],
+            img: "https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=600&q=80",
+            github: "https://github.com/Piyushjain1857/superpower_ar_engine",
+            demo: "https://github.com/Piyushjain1857/superpower_ar_engine"
+        },
+        {
+            category: "Games & AR",
+            title: "AI Virtual Mouse & HUD",
+            desc: "Contactless computer control system leveraging MediaPipe hand landmark tracking for pinch clicks, drags, and scrolling paired with a futuristic React HUD control panel.",
+            tech: [
+                { name: "Python", url: "https://www.python.org/" },
+                { name: "OpenCV", url: "https://opencv.org/" },
+                { name: "MediaPipe", url: "https://developers.google.com/mediapipe" },
+                { name: "React 18", url: "https://react.dev/" },
+                { name: "Vite", url: "https://vitejs.dev/" }
+            ],
+            img: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=600&q=80",
+            github: "https://github.com/Piyushjain1857/AI-Virtual-Mouse",
+            demo: "https://github.com/Piyushjain1857/AI-Virtual-Mouse"
+        },
+        {
+            category: "Full-Stack & Web",
+            title: "FORTUNA Wealth Manager",
+            desc: "A Gojek-inspired high-fidelity personal wealth manager and expense tracker featuring a bold Neo-Brutalist UI and zero-server local storage data management.",
+            tech: [
+                { name: "TypeScript", url: "https://www.typescriptlang.org/" },
+                { name: "React", url: "https://react.dev/" },
+                { name: "Vite", url: "https://vitejs.dev/" },
+                { name: "CSS Modules", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" }
+            ],
+            img: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=600&q=80",
+            github: "https://github.com/Piyushjain1857/FORTUNA",
+            demo: "https://github.com/Piyushjain1857/FORTUNA"
+        },
+        {
+            category: "Full-Stack & Web",
+            title: "UniFlow X",
+            desc: "AI-powered Digital Operating System for Universities connecting Students, Faculty, Club Administrators, and University Administrators across a single ecosystem.",
+            tech: [
+                { name: "React", url: "https://react.dev/" },
+                { name: "Node.js", url: "https://nodejs.org/" },
+                { name: "Express", url: "https://expressjs.com/" },
+                { name: "TailwindCSS", url: "https://tailwindcss.com/" }
+            ],
+            img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80",
+            github: "https://github.com/Piyushjain1857/uniflow-x",
+            demo: "https://github.com/Piyushjain1857/uniflow-x"
+        },
+        {
+            category: "Full-Stack & Web",
+            title: "PJ Social Verification Portal",
+            desc: "Enterprise-grade full-stack portal engineered to verify creator campaign deliverables and engagements across Instagram, LinkedIn, and Facebook.",
+            tech: [
+                { name: "React", url: "https://react.dev/" },
+                { name: "Node.js", url: "https://nodejs.org/" },
+                { name: "REST APIs", url: "https://restfulapi.net/" },
+                { name: "Express", url: "https://expressjs.com/" }
+            ],
+            img: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=600&q=80",
+            github: "https://github.com/Piyushjain1857/PJ-Social--Social-Media-Verification-Portal",
+            demo: "https://github.com/Piyushjain1857/PJ-Social--Social-Media-Verification-Portal"
+        },
+        {
+            category: "AI & GenAI",
+            title: "Text to SQL with Gemini",
+            desc: "Intelligent database querying application converting natural language questions into optimized SQL queries and executing them dynamically on SQLite via Streamlit.",
+            tech: [
+                { name: "Python", url: "https://www.python.org/" },
+                { name: "Google Gemini", url: "https://ai.google.dev/" },
+                { name: "SQLite", url: "https://www.sqlite.org/" },
+                { name: "Streamlit", url: "https://streamlit.io/" }
+            ],
+            img: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=600&q=80",
+            github: "https://github.com/Piyushjain1857/TextToSqlByGenAI",
+            demo: "https://github.com/Piyushjain1857/TextToSqlByGenAI"
+        },
+        {
+            category: "AI & GenAI",
+            title: "PDF Intelligence & RAG Chatbot",
+            desc: "Retrieval-Augmented Generation (RAG) system utilizing FAISS vector embeddings and Google Generative AI to chat with and analyze complex multi-page PDF documents.",
+            tech: [
+                { name: "Python", url: "https://www.python.org/" },
+                { name: "LangChain", url: "https://www.langchain.com/" },
+                { name: "FAISS", url: "https://github.com/facebookresearch/faiss" },
+                { name: "Google GenAI", url: "https://ai.google.dev/" }
+            ],
+            img: "https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&w=600&q=80",
+            github: "https://github.com/Piyushjain1857/GenAI-Programme-to-make-pdf-analyser",
+            demo: "https://github.com/Piyushjain1857/GenAI-Programme-to-make-pdf-analyser"
+        },
+        {
+            category: "AI & GenAI",
+            title: "YouTube Transcriber & Summarizer",
+            desc: "Automated video pipeline extracting speech transcripts via YouTube API and structuring them into timestamps, key insights, and bulleted executive summaries.",
+            tech: [
+                { name: "Python", url: "https://www.python.org/" },
+                { name: "Gemini AI", url: "https://ai.google.dev/" },
+                { name: "YouTube API", url: "https://developers.google.com/youtube" },
+                { name: "Streamlit", url: "https://streamlit.io/" }
+            ],
+            img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80",
+            github: "https://github.com/Piyushjain1857/Youtube-Video-Transcribe-Summarizer_main",
+            demo: "https://github.com/Piyushjain1857/Youtube-Video-Transcribe-Summarizer_main"
+        },
+        {
+            category: "React / Vite App",
+            title: "Party Pass Generator 🎉",
+            desc: "A modern React web app built with Vite for generating dynamic party passes. Users input their details and instantly download tickets with personalized QR codes.",
+            tech: [
+                { name: "React", url: "https://react.dev/" },
+                { name: "Vite", url: "https://vitejs.dev/" },
+                { name: "QR Engine", url: "https://developer.mozilla.org/en-US/docs/Web/API" }
+            ],
+            img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80",
+            github: "https://github.com/Piyushjain1857/Fresher-Party-Passes-generator",
+            demo: "https://github.com/Piyushjain1857/Fresher-Party-Passes-generator"
+        }
     ];
+
+    const filterTabs = [
+        { id: 'all', label: 'All Projects' },
+        { id: 'games', label: '🎮 Games & AR' },
+        { id: 'ai', label: '🤖 AI & GenAI' },
+        { id: 'web', label: '🌐 Full-Stack & Web' },
+        { id: 'ui', label: '✨ UI & Design' }
+    ];
+
+    const filteredProjects = useMemo(() => {
+        if (activeFilter === 'all') return projectsData;
+        if (activeFilter === 'games') {
+            return projectsData.filter(p => p.category.includes('Game') || p.category.includes('AR'));
+        }
+        if (activeFilter === 'ai') {
+            return projectsData.filter(p => p.category.includes('AI') || p.category.includes('Machine Learning') || p.category.includes('Security'));
+        }
+        if (activeFilter === 'web') {
+            return projectsData.filter(p => p.category.includes('Full-Stack') || p.category.includes('Web') || p.category.includes('React / Vite') || p.category.includes('Healthcare') || p.category.includes('Entertainment'));
+        }
+        if (activeFilter === 'ui') {
+            return projectsData.filter(p => (p.category.includes('HTML') || p.category.includes('UI')) && !p.category.includes('Game'));
+        }
+        return projectsData;
+    }, [activeFilter]);
+
+    const getCount = (id) => {
+        if (id === 'all') return projectsData.length;
+        if (id === 'games') return projectsData.filter(p => p.category.includes('Game') || p.category.includes('AR')).length;
+        if (id === 'ai') return projectsData.filter(p => p.category.includes('AI') || p.category.includes('Machine Learning') || p.category.includes('Security')).length;
+        if (id === 'web') return projectsData.filter(p => p.category.includes('Full-Stack') || p.category.includes('Web') || p.category.includes('React / Vite') || p.category.includes('Healthcare') || p.category.includes('Entertainment')).length;
+        if (id === 'ui') return projectsData.filter(p => (p.category.includes('HTML') || p.category.includes('UI')) && !p.category.includes('Game')).length;
+        return 0;
+    };
 
     return (
         <section id="projects" className="section projects-section">
             <div className="container">
                 <h2 className="section-title reveal"><span>03.</span> Selected Work</h2>
 
+                {/* Filter Navigation */}
+                <div className="projects-filter reveal">
+                    {filterTabs.map((tab) => (
+                        <button
+                            key={tab.id}
+                            className={`project-filter-btn ${activeFilter === tab.id ? 'active' : ''}`}
+                            onClick={() => setActiveFilter(tab.id)}
+                        >
+                            <span>{tab.label}</span>
+                            <span className="project-filter-badge">{getCount(tab.id)}</span>
+                        </button>
+                    ))}
+                </div>
+
                 <div className="projects-grid">
-                    {projectsData.map((project, index) => (
-                        <ProjectCard key={index} project={project} />
+                    {filteredProjects.map((project, index) => (
+                        <ProjectCard key={project.title + index} project={project} />
                     ))}
                 </div>
 
                 <div className="text-center reveal" style={{ marginTop: '4rem' }}>
                     <a href="https://github.com/Piyushjain1857" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
-                        View More on GitHub
+                        View All 75+ Repositories on GitHub
                     </a>
                 </div>
             </div>
