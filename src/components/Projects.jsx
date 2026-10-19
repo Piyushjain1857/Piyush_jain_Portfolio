@@ -287,11 +287,9 @@ export default function Projects() {
         {
             category: "Games & AR",
             title: "Superpower AR Engine",
-            desc: "Cinematic real-time superhero simulator built with ModernGL shaders, OpenCV, and MediaPipe for 60 FPS gesture-triggered energy blasts, particle FX, and superhero powers.",
+            desc: "Cinematic real-time superhero simulator built with OpenCV for 60 FPS gesture-triggered energy blasts, particle FX, and superhero powers.",
             tech: [
                 { name: "Python", url: "https://www.python.org/" },
-                { name: "ModernGL", url: "https://moderngl.readthedocs.io/" },
-                { name: "MediaPipe", url: "https://developers.google.com/mediapipe" },
                 { name: "OpenCV", url: "https://opencv.org/" },
                 { name: "Pygame", url: "https://www.pygame.org/" }
             ],
@@ -302,11 +300,10 @@ export default function Projects() {
         {
             category: "Games & AR",
             title: "AI Virtual Mouse & HUD",
-            desc: "Contactless computer control system leveraging MediaPipe hand landmark tracking for pinch clicks, drags, and scrolling paired with a futuristic React HUD control panel.",
+            desc: "Contactless computer control system leveraging hand landmark tracking for pinch clicks, drags, and scrolling paired with a futuristic React HUD control panel.",
             tech: [
                 { name: "Python", url: "https://www.python.org/" },
                 { name: "OpenCV", url: "https://opencv.org/" },
-                { name: "MediaPipe", url: "https://developers.google.com/mediapipe" },
                 { name: "React 18", url: "https://react.dev/" },
                 { name: "Vite", url: "https://vitejs.dev/" }
             ],

@@ -14,11 +14,11 @@ His skills: HTML, CSS, JavaScript, React, Node.js, Python, FastAPI, Docker, Post
 He confidently uses both JavaScript in his projects.
 
 His projects: 
-1. Superpower AR Engine: Cinematic real-time superhero simulator (Python 3.12, ModernGL Shaders, MediaPipe, OpenCV, Pygame)
+1. Superpower AR Engine: Cinematic real-time superhero simulator (Python 3.12, OpenCV, Pygame)
 2. Chicken Roads: Casino-style arcade crossing game with procedural synthesizers and risk multipliers (JavaScript, Canvas)
 3. Mines: High-stakes strategic grid game with real-time sound synthesis and tile cashout mechanics (JavaScript, CSS3)
 4. Limbo Reflex Game: Fast-paced neon arcade reflex game with Canvas 2D particle explosions and difficulty tiers (JavaScript, HTML5, CSS3)
-5. AI Virtual Mouse: Contactless computer control using MediaPipe hand landmark tracking and futuristic React HUD (Python, OpenCV, MediaPipe, React)
+5. AI Virtual Mouse: Contactless computer control using hand landmark tracking and futuristic React HUD (Python, OpenCV, React)
 6. Cyberpunk Rock Paper Scissors & Neon Tic-Tac-Toe: Interactive glowing arcade games with custom animations and AI
 7. Curio AI: Premium adaptive cloud quiz engine with personalized AI pathways (React, FastAPI, Python, SQLite)
 8. Agro AI: Computer vision and conversational LLM assistant for crop diagnostics (Python, FastAPI, React)

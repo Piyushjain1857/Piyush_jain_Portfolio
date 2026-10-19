@@ -67,9 +67,7 @@ export default function Skills() {
             icon: PlayCircle,
             title: "Game & Creative Tech",
             tags: [
-                { name: "MediaPipe Tracking", url: "https://developers.google.com/mediapipe" },
                 { name: "HTML5 Canvas", url: "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" },
-                { name: "ModernGL Shaders", url: "https://moderngl.readthedocs.io/" },
                 { name: "Pygame", url: "https://www.pygame.org/" }
             ]
         },
