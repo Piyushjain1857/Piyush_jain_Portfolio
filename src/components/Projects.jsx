@@ -67,7 +67,6 @@ export default function Projects() {
             desc: "Predictive analytics system for farmers, utilizing climate data and deep learning models to forecast crop yields and detect diseases.",
             tech: [
                 { name: "Python", url: "https://www.python.org/" },
-                { name: "TensorFlow", url: "https://www.tensorflow.org/" },
                 { name: "FastAPI", url: "https://fastapi.tiangolo.com/" }
             ],
             img: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=600&q=80",
@@ -275,10 +274,9 @@ export default function Projects() {
         {
             category: "HTML / CSS / JS · Game",
             title: "Chicken Roads Arcade",
-            desc: "Casino-style horizontal arcade crossing game featuring procedural sound effects via the Web Audio API, dynamic risk multipliers, and smooth collision loops.",
+            desc: "Casino-style horizontal arcade crossing game featuring procedural sound effects, dynamic risk multipliers, and smooth collision loops.",
             tech: [
                 { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
-                { name: "Web Audio API", url: "https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API" },
                 { name: "HTML5 Canvas", url: "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" },
                 { name: "CSS3", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" }
             ],
@@ -321,7 +319,7 @@ export default function Projects() {
             title: "FORTUNA Wealth Manager",
             desc: "A Gojek-inspired high-fidelity personal wealth manager and expense tracker featuring a bold Neo-Brutalist UI and zero-server local storage data management.",
             tech: [
-                { name: "TypeScript", url: "https://www.typescriptlang.org/" },
+                { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
                 { name: "React", url: "https://react.dev/" },
                 { name: "Vite", url: "https://vitejs.dev/" },
                 { name: "CSS Modules", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" }
@@ -375,11 +373,10 @@ export default function Projects() {
         {
             category: "AI & GenAI",
             title: "PDF Intelligence & RAG Chatbot",
-            desc: "Retrieval-Augmented Generation (RAG) system utilizing FAISS vector embeddings and Google Generative AI to chat with and analyze complex multi-page PDF documents.",
+            desc: "Retrieval-Augmented Generation (RAG) system utilizing Gemini and Google Generative AI to chat with and analyze complex multi-page PDF documents.",
             tech: [
                 { name: "Python", url: "https://www.python.org/" },
                 { name: "LangChain", url: "https://www.langchain.com/" },
-                { name: "FAISS", url: "https://github.com/facebookresearch/faiss" },
                 { name: "Google GenAI", url: "https://ai.google.dev/" }
             ],
             img: "https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&w=600&q=80",

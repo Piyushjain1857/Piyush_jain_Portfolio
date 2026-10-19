@@ -30,7 +30,6 @@ export default function Skills() {
             tags: [
                 { name: "Python", url: "https://www.python.org/" },
                 { name: "JavaScript (ES6+)", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
-                { name: "TypeScript", url: "https://www.typescriptlang.org/" },
                 { name: "SQL", url: "https://en.wikipedia.org/wiki/SQL" }
             ]
         },
@@ -61,8 +60,6 @@ export default function Skills() {
             tags: [
                 { name: "Google Gemini", url: "https://ai.google.dev/" },
                 { name: "LangChain", url: "https://www.langchain.com/" },
-                { name: "FAISS (Vector RAG)", url: "https://github.com/facebookresearch/faiss" },
-                { name: "TensorFlow", url: "https://www.tensorflow.org/" },
                 { name: "OpenCV", url: "https://opencv.org/" }
             ]
         },
@@ -71,7 +68,6 @@ export default function Skills() {
             title: "Game & Creative Tech",
             tags: [
                 { name: "MediaPipe Tracking", url: "https://developers.google.com/mediapipe" },
-                { name: "Web Audio API", url: "https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API" },
                 { name: "HTML5 Canvas", url: "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" },
                 { name: "ModernGL Shaders", url: "https://moderngl.readthedocs.io/" },
                 { name: "Pygame", url: "https://www.pygame.org/" }

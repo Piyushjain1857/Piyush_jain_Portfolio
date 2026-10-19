@@ -16,7 +16,7 @@ export default function Terminal() {
         help: "Available commands: help, about, projects, resume, skills, contact, github, theme, clear, sudo hire piyush",
         about: "Piyush Jain is a Full-Stack Software Engineer building scalable backend systems and intelligent AI integrations.",
         projects: "Featured: Superpower AR Engine, Chicken Roads, Mines, Curio AI, Agro AI, Hostel Leave Management, FORTUNA. Type 'github' to see all 75+ repos.",
-        skills: "Languages: Python, JavaScript, TypeScript | AI/ML: Gemini, LangChain, OpenCV | Games: MediaPipe, Web Audio API, ModernGL | Backend: Node.js, FastAPI, PostgreSQL",
+        skills: "Languages: Python, JavaScript | AI/ML: GenAI, OpenCV | Backend: Node.js, FastAPI, PostgreSQL",
         contact: "Email: Piyushjain1857@gmail.com | Phone: +91 8595850153",
         resume: "Opening Piyush Jain's resume in a new tab...",
         github: "Redirecting to GitHub...",

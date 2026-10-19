@@ -3,7 +3,6 @@ import { GitHub, ExternalLink } from 'react-feather';
 
 const LANG_COLORS = {
     JavaScript: '#f1e05a',
-    TypeScript: '#3178c6',
     Python: '#3572A5',
     HTML: '#e34c26',
     CSS: '#563d7c',
@@ -53,8 +52,7 @@ const getDefaultGithubData = () => {
             ['JavaScript', 26],
             ['Python', 21],
             ['HTML', 12],
-            ['CSS', 11],
-            ['TypeScript', 2]
+            ['CSS', 11]
         ],
         langTotal: 72,
         bucketValues: bucketValues,
